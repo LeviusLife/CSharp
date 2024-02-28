@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Canvas", "Canvas\Canvas.csproj", "{13953899-C658-4867-BEA8-B6A0493404C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Canvas", "Library.Canvas\Library.Canvas.csproj", "{3AA747CF-821F-403F-A095-B3BEE22D7251}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAUI.Canvas", "MAUI.Canvas\MAUI.Canvas.csproj", "{4420F2CD-0442-4A41-A8F3-C44AD76B31EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{13953899-C658-4867-BEA8-B6A0493404C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13953899-C658-4867-BEA8-B6A0493404C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13953899-C658-4867-BEA8-B6A0493404C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13953899-C658-4867-BEA8-B6A0493404C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AA747CF-821F-403F-A095-B3BEE22D7251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AA747CF-821F-403F-A095-B3BEE22D7251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AA747CF-821F-403F-A095-B3BEE22D7251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AA747CF-821F-403F-A095-B3BEE22D7251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4420F2CD-0442-4A41-A8F3-C44AD76B31EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4420F2CD-0442-4A41-A8F3-C44AD76B31EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4420F2CD-0442-4A41-A8F3-C44AD76B31EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4420F2CD-0442-4A41-A8F3-C44AD76B31EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

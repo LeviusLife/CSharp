@@ -1,0 +1,82 @@
+asynchronous programming
+    this type of programming allows us the prgram to run multiple tasks at the same time
+
+    task is essential for asynchronous programming
+    asynchronous functions:
+    task
+    task.delay(*with the amount of milliseconds as the parameter*)
+
+
+    making a function into an asynchronous function:
+
+    private static Toast ToastBread(int slices) {
+
+
+    }
+
+    turns into:
+
+    private static async Task<Toast> ToastBread(int slices) {
+
+
+    }
+
+    to turn a function asynchronous just add the word async and add Task<whatever the data type was before here*>
+
+
+  AWAIT Keyword
+
+
+Task cpuTask = Task.Run(() =>
+
+
+    for (int i = 0; i < 5; i++) {Thread.Sleep(1000); Console.WriteLine(${i} seconds so far!)};
+
+
+);
+
+
+Task<Toast> toastTask = ToastBread(2)
+Task<Egg> eggTask = FryEgg(2)
+Task<Bacon> baconTask = FryBacon(3)
+
+Toast toast = await toastTask
+AppkyButter(toast)
+ApplyJam(toast)
+Console.WriteLine("toast is ready");
+
+Task.Run allows multiple things to have await on them and to execute awaits out of order
+
+functions/keywords for asynchronous programming:
+task
+task.run
+await
+
+
+builder design pattern
+loose coupling
+type generalization
+
+
+What do I need to do?
+templates
+download Maui
+figure out xaml
+need the xaml files
+
+
+
+
+
+Maui shit
+
+App shell
+  -Routing
+  -Binding
+    binding will never work for something that is not a property (and it needs a proper setter and getter)
+    
+
+2nd biggest thing in this class is inserting to a list from a dialog.
+
+
+  
