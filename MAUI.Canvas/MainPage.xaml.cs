@@ -1,5 +1,7 @@
 ﻿namespace MAUI.Canvas
 {
+		//eat my ass
+		
     public partial class MainPage : ContentPage
     {
     	//int count = 0;
