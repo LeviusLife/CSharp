@@ -1,4 +1,5 @@
 
+using System.Reflection.Metadata.Ecma335;
 using Library.Canvas.Models;
 
 
@@ -14,7 +15,15 @@ namespace Library.Canvas.Services {
 
         private StudentService() {
 
-            studentList = new List<Person>();
+            studentList = new List<Person> {
+
+                new Person{Name= "TestStudent 1"},
+                new Person{Name= "TestStudent 2"},
+                new Person{Name= "TestStudent 3"},
+                new Person{Name= "TestStudent 4"},
+                new Person{Name= "TestStudent 5"},
+
+            };
 
         }
 
