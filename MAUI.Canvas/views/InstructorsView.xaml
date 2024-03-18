@@ -8,5 +8,7 @@
             Text="INSTRUCTORSS!!!!!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+
+            <Button Text="Back" Clicked="BackClicked"/>
     </VerticalStackLayout>
 </ContentPage>

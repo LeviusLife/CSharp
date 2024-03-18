@@ -6,4 +6,13 @@ public partial class InstructorsView : ContentPage
 	{
 		InitializeComponent();
 	}
+
+
+	private void BackClicked(object sender, EventArgs e) {
+
+		Shell.Current.GoToAsync("//MainPage");
+
+	}
+
+
 }

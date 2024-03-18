@@ -1,0 +1,20 @@
+datacells and ... are used in order to avoid having to explicityly assign BindingContexts
+
+Commanding:
+
+
+
+
+what the hell is the difference between the xaml and the xaml.cs files?
+answer:
+
+the xaml files are the files that contain markup language which is used to 
+define the user interface that the public uses to interact
+with the application.
+
+
+the xaml.cs files is the code-behind of said xaml files. These files
+contain C# code that handles events, logic of said application, and manipulates 
+the ui elements in the xaml files.
+
+
