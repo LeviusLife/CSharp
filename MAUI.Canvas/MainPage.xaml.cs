@@ -9,7 +9,7 @@
     	public MainPage()
     	{
     		InitializeComponent();
-    		BindingContext = new StudentsViewModel();
+    		
     	}
 
     	private void StudentViewClicked(object sender, EventArgs e) {

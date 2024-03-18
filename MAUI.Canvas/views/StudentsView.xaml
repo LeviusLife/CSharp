@@ -8,7 +8,7 @@
             Text="STUDENTS"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-
+        <Entry Text="{Binding StudentName}"></Entry>
         <Button Text="Back" Clicked="BackClicked"/>
     </VerticalStackLayout>
 </ContentPage>

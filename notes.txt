@@ -18,3 +18,14 @@ contain C# code that handles events, logic of said application, and manipulates
 the ui elements in the xaml files.
 
 
+
+What is MVVM?
+this is an software architectural pattern or like a conceptual framework that
+helps the coder understand how to a ui application from the ground-up. There are three
+components of MVVM:
+
+-models
+-views
+-view models
+
+What in the world is a view and a view model?
