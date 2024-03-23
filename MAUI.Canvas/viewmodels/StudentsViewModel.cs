@@ -8,7 +8,7 @@ using Library.Canvas.Services;
 namespace MAUI.Canvas.viewmodels
 {
 
-    public class StudentsViewModel
+    internal class StudentsViewModel : INotifyPropertyChanged
     {
 
         //private Person underlyingPerson;
@@ -40,7 +40,7 @@ namespace MAUI.Canvas.viewmodels
         public void AddStudent() {
 
             studentSvc.Add(new Person { Name = "This is a new client"});
-            NotifyPropertyChanged("Students");
+            NotifyPropertyChanged(nameof(Students));
 
         }
 

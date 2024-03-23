@@ -39,5 +39,15 @@ view model
 -this is the middle man between the model and the view. it presents the operations and data from
 the model to the view. 
 
+
+What is BindingContexts and/or binding and why is it important?
+
+binding
+-binding is the process of connecting properties of a view (ui shit)
+to properties of a viewModel. this process allows data to flow effortlessly
+between the view and the viewModel. 
+-when bound properties in the viewModel change then the corresponding UI elements in the
+view will automatically update to reflect said changes, and vice versa.
+
 An assemblies 
 
