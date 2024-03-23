@@ -1,4 +1,6 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using AddressBook;
 using Library.Canvas.Models;
 using Library.Canvas.Services;
@@ -13,6 +15,16 @@ namespace MAUI.Canvas.viewmodels
 
         private StudentService studentSvc;
 
+        public event PropertyChangedEventHandler? PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "") {
+
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        }
+
+
+
         public ObservableCollection<Person> Students {
 
 
@@ -21,6 +33,14 @@ namespace MAUI.Canvas.viewmodels
                 return new ObservableCollection<Person>(studentSvc.Students);
             }
 
+
+        }
+
+
+        public void AddStudent() {
+
+            studentSvc.Add(new Person { Name = "This is a new client"});
+            NotifyPropertyChanged("Students");
 
         }
 

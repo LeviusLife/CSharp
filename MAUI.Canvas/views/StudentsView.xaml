@@ -14,7 +14,7 @@
 
         </ListView>
 
-
+        <Button Text="Add Student" Clicked="AddClicked"/>
         <Button Text="Back" Clicked="BackClicked"/>
     </VerticalStackLayout>
 </ContentPage>

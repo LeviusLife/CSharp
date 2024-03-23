@@ -29,3 +29,15 @@ components of MVVM:
 -view models
 
 What in the world is a view and a view model?
+
+-the view represents the user interface (UI) of the application. Typically this is responsible
+for presenting data to the user and capturing input from the user. 
+views are typically implemented with some sort of markup language and usually have
+minimal code-behind logic (it primarily focuses on ui)
+
+view model 
+-this is the middle man between the model and the view. it presents the operations and data from
+the model to the view. 
+
+An assemblies 
+
