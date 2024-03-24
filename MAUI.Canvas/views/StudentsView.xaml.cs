@@ -1,6 +1,6 @@
 using MAUI.Canvas.viewmodels;
 
-namespace MAUI.Views;
+namespace MAUI.Canvas.Views;
 
 public partial class StudentsView : ContentPage
 {
