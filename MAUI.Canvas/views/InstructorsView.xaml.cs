@@ -1,3 +1,6 @@
+using MAUI.Canvas.viewmodels;
+
+
 namespace MAUI.Views;
 
 public partial class InstructorsView : ContentPage
