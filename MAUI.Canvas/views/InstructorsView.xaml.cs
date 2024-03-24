@@ -1,4 +1,4 @@
-namespace MauiApp1;
+namespace MAUI.Views;
 
 public partial class InstructorsView : ContentPage
 {
