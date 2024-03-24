@@ -29,6 +29,11 @@
     <ShellContent 
         Title="Instructors"
         ContentTemplate="{DataTemplate local2:InstructorsView}"
-        Route="InstructorsView" />    
+        Route="InstructorsView" />  
+
+    <ShellContent 
+        Title="Instructor Details"
+        ContentTemplate="{DataTemplate local3:InstructorDialog}"
+        Route="InstructorDetail" />  
 
 </Shell>

@@ -18,4 +18,12 @@ public partial class InstructorsView : ContentPage
 	}
 
 
+	private void AddClicked(object sender, EventArgs e) {
+
+		Shell.Current.GoToAsync("//InstructorDetail");
+		
+
+	}
+
+
 }
