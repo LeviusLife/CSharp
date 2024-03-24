@@ -1,3 +1,5 @@
+using MAUI.Canvas.viewmodels;
+
 namespace MAUI.Canvas.Dialogs
 {
     public partial class StudentDialog : ContentPage
@@ -5,6 +7,7 @@ namespace MAUI.Canvas.Dialogs
     	public StudentDialog()
     	{
     		InitializeComponent();
+			BindingContext = new StudentDialogViewModel();
     	}
 
 		private void CancelClicked(object sender, EventArgs e) {
