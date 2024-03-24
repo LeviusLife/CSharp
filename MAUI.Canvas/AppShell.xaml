@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MAUI.Canvas"
     xmlns:local2="clr-namespace:MAUI.Canvas.Views"
+    xmlns:local3="clr-namespace:MAUI.Canvas.Dialogs"
     Shell.FlyoutBehavior="Disabled"
     Title="MAUI.Canvas">
 
@@ -17,6 +18,12 @@
         Title="Students"
         ContentTemplate="{DataTemplate local2:StudentsView}"
         Route="StudentsView" />
+
+     <ShellContent 
+        Title="Student Details"
+        ContentTemplate="{DataTemplate local3:StudentDialog}"
+        Route="StudentDetail" />
+
 
 
     <ShellContent 
