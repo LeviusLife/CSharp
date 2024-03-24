@@ -22,6 +22,8 @@
 
             <Label Text="Code" Grid.Column="0" Grid.Row="0"/>
             <Label Text="Name" Grid.Column="0" Grid.Row="1"/>
-        </Grid>    
+        </Grid>
+
+        <Button Text="Cancel" Clicked="CancelClicked"/>    
     </VerticalStackLayout>
 </ContentPage>

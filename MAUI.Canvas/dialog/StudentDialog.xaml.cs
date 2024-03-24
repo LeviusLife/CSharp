@@ -6,5 +6,14 @@ namespace MAUI.Canvas.Dialogs
     	{
     		InitializeComponent();
     	}
+
+		private void CancelClicked(object sender, EventArgs e) {
+
+			Shell.Current.GoToAsync("//StudentsView");
+
+
+		}
+
+
     }
 }
