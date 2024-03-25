@@ -26,7 +26,7 @@
             <Entry Text="{Binding Name}" Grid.Column="1" Grid.Row="1"/>
         </Grid>
 
-
+            <Button Text="Ok" Clicked="OkClicked"/>
             <Button Text="Cancel" Clicked="CancelClicked"/>
     </VerticalStackLayout>
 </ContentPage>

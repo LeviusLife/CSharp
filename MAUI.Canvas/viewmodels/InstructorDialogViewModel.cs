@@ -1,4 +1,5 @@
 ﻿using Library.Canvas.Models;
+using Library.Canvas.Services;
 
 namespace MAUI.Canvas.viewmodels
 {
@@ -37,6 +38,17 @@ namespace MAUI.Canvas.viewmodels
 
         }
 
+
+        public void AddStudent() {
+
+            if(student != null){
+
+                StudentService.Current.Add(student);
+
+            }
+
+
+        }
 
 
 

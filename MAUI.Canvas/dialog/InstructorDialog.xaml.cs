@@ -17,5 +17,13 @@ namespace MAUI.Canvas.Dialogs
 
 		}
 
+		private void OkClicked(object sender, EventArgs e) {
+
+			(BindingContext as InstructorDialogViewModel)?.AddStudent();
+			Shell.Current.GoToAsync("//InstructorsView");
+
+		}
+
+
     }
 }
