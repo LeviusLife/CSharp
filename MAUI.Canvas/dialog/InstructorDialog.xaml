@@ -9,6 +9,21 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
+         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Label Text="Code" Grid.Column="0" Grid.Row="0"/>
+            <Label Text="Name" Grid.Column="0" Grid.Row="1"/>
+        </Grid>
+
 
             <Button Text="Cancel" Clicked="CancelClicked"/>
     </VerticalStackLayout>

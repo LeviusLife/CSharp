@@ -10,6 +10,7 @@
             HorizontalOptions="Center" />
 
             <Button Text="Add Student" Clicked="AddClicked"/>
+            <Button Text="Add Course" Clicked="AddCourseClicked"/>
             <Button Text="Back" Clicked="BackClicked"/>
     </VerticalStackLayout>
 </ContentPage>
