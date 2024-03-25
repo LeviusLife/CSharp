@@ -9,6 +9,12 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
+             <ListView
+                ItemsSource="{Binding Students}">
+
+            </ListView>
+
+
             <Button Text="Add Student" Clicked="AddClicked"/>
             <Button Text="Add Course" Clicked="AddCourseClicked"/>
             <Button Text="Back" Clicked="BackClicked"/>

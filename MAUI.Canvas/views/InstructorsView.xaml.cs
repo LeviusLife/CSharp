@@ -8,6 +8,7 @@ public partial class InstructorsView : ContentPage
 	public InstructorsView()
 	{
 		InitializeComponent();
+		BindingContext = new StudentsViewModel();
 	}
 
 
