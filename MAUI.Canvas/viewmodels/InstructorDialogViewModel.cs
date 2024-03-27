@@ -34,7 +34,7 @@ namespace MAUI.Canvas.viewmodels
 
         public InstructorDialogViewModel(){
 
-            student = new Person { Id=101, Name="Terry",  Classification="Freshmen"};
+            student = new Person();
 
         }
 

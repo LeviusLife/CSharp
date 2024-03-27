@@ -25,5 +25,11 @@ namespace MAUI.Canvas.Dialogs
 		}
 
 
+		private void ContentPage_NavigatedTo(object sender, EventArgs e) {
+
+			BindingContext = new InstructorDialogViewModel();
+
+		}
+
     }
 }
