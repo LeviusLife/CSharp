@@ -20,9 +20,7 @@ namespace Library.Canvas.Models {
         public Person() {
 
             Name = string.Empty;
-
-
-
+            Classification = string.Empty;
         }
 
 

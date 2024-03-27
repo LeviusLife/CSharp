@@ -17,11 +17,11 @@ namespace Library.Canvas.Services {
 
             studentList = new List<Person> {
 
-                new Person{Name= "TestStudent 1"},
-                new Person{Name= "TestStudent 2"},
-                new Person{Name= "TestStudent 3"},
-                new Person{Name= "TestStudent 4"},
-                new Person{Name= "TestStudent 5"},
+                new Person{Name= "TestStudent 1", Classification="Freshman"},
+                new Person{Name= "TestStudent 2", Classification="Freshman"},
+                new Person{Name= "TestStudent 3", Classification="Freshman"},
+                new Person{Name= "TestStudent 4", Classification="Freshman"},
+                new Person{Name= "TestStudent 5", Classification="Freshman"},
 
             };
 
