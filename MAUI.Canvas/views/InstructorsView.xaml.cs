@@ -8,7 +8,7 @@ public partial class InstructorsView : ContentPage
 	public InstructorsView()
 	{
 		InitializeComponent();
-		BindingContext = new StudentsViewModel();
+		BindingContext = new InstructorsViewModel();
 	}
 
 
@@ -30,6 +30,13 @@ public partial class InstructorsView : ContentPage
 	private void AddCourseClicked(object sender, EventArgs e) {
 
 		Shell.Current.GoToAsync("//InstructorDetail");
+
+	}
+
+
+	private void ContentPage_NavigatedTo(object sender, EventArgs e) {
+
+			(BindingContext as InstructorsViewModel).Refresh();
 
 	}
 
