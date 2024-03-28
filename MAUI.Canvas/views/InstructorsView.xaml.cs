@@ -41,4 +41,11 @@ public partial class InstructorsView : ContentPage
 	}
 
 
+	private void RemoveClicked(object sender, EventArgs e) {
+
+		(BindingContext as InstructorsViewModel).Remove();
+
+	}
+
+
 }

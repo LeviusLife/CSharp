@@ -51,6 +51,12 @@ namespace Library.Canvas.Services {
 
         }
 
+        public void Remove(Person student) {
+
+            studentList.Remove(student);
+
+        }
+
         public List<Person> Students {
 
 

@@ -53,4 +53,6 @@ An assemblies
 
 
 im currently on recording 11 (minute 57)
+(everthing up to recording 11 helps with creating student and course, and building the
+different views)
 

@@ -35,6 +35,10 @@ namespace MAUI.Canvas.viewmodels
 
         }
 
+        public Person SelectedStudent{
+
+            get; set;
+        }
 
         public void AddStudent() {
 
@@ -47,6 +51,13 @@ namespace MAUI.Canvas.viewmodels
 
             NotifyPropertyChanged(nameof(Students));
 
+        }
+
+
+        public void Remove() {
+
+            studentSvc.Remove(SelectedStudent);
+            Refresh();
         }
 
         /*
