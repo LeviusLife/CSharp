@@ -13,15 +13,25 @@ namespace Library.Canvas.Services {
         private List<Person> studentList;
         private static StudentService? _instance;
 
+        private int LastId
+        {
+
+            get
+            {
+                return studentList.Select(c => c.Id).Max();
+            }
+
+        }
+
         private StudentService() {
 
             studentList = new List<Person> {
 
-                new Person{Name= "TestStudent 1", Classification="Freshman"},
-                new Person{Name= "TestStudent 2", Classification="Freshman"},
-                new Person{Name= "TestStudent 3", Classification="Freshman"},
-                new Person{Name= "TestStudent 4", Classification="Freshman"},
-                new Person{Name= "TestStudent 5", Classification="Freshman"},
+                new Person{Name= "TestStudent 1", Classification="Freshman", Id=1},
+                new Person{Name= "TestStudent 2", Classification="Freshman", Id=2},
+                new Person{Name= "TestStudent 3", Classification="Freshman", Id=3},
+                new Person{Name= "TestStudent 4", Classification="Freshman", Id=4},
+                new Person{Name= "TestStudent 5", Classification="Freshman", Id=5},
 
             };
 
@@ -46,6 +56,11 @@ namespace Library.Canvas.Services {
         }
 
         public void Add(Person student) {
+
+            if(student.Id <= 0 )
+            {
+                student.Id = LastId + 1;
+            }
 
             studentList.Add(student);
 

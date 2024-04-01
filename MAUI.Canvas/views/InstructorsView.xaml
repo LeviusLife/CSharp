@@ -19,6 +19,7 @@
 
             
             <Button Text="Add Student" Clicked="AddClicked"/>
+            <Button Text="Update Student" Clicked="UpdateClicked"/>
             <Button Text="Remove Student" Clicked="RemoveClicked"/>
             <Button Text="Add Course" Clicked="AddCourseClicked"/>
             <Button Text="Back" Clicked="BackClicked"/>
