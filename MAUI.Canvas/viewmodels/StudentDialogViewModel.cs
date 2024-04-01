@@ -26,6 +26,7 @@ namespace MAUI.Canvas.viewmodels
 
         public StudentDialogViewModel(){
 
+            student = new Person();
 
         }
 

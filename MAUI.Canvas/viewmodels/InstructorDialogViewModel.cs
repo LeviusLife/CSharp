@@ -13,7 +13,7 @@ namespace MAUI.Canvas.viewmodels
             get {return student?.Name ?? string.Empty;}
             set {
 
-                if(student != null) student = new Person();
+                if(student == null) student = new Person();
                 
                 student.Name = value;
 
