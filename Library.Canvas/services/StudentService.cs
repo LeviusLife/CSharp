@@ -55,7 +55,7 @@ namespace Library.Canvas.Services {
 
         }
 
-        public void Add(Person student) {
+        public void AddorUpdate(Person student) {
 
             if(student.Id <= 0 )
             {

@@ -39,7 +39,7 @@ namespace MAUI.Canvas.viewmodels
 
         public void AddStudent() {
 
-            studentSvc.Add(new Person { Name = "This is a new client"});
+            studentSvc.AddorUpdate(new Person { Name = "This is a new client"});
             NotifyPropertyChanged(nameof(Students));
 
         }

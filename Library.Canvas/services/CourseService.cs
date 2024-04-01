@@ -60,9 +60,9 @@ namespace Library.Canvas.Services {
 
         }
 
-        public IEnumerable<Course> Search(string query) {
+        public List<Course> Search(string query) {
 
-            /*
+            
             var searchQuery = from courseF in courseList
                                 where courseF.Name.ToUpper().Contains(query.ToUpper()) || courseF.Code.ToUpper().Contains(query.ToUpper()) || courseF.Description.ToUpper().Contains(query.ToUpper())
                                 select courseF;
@@ -72,14 +72,14 @@ namespace Library.Canvas.Services {
             List<Course> queryList = searchQuery.ToList();
 
             return queryList;
-            */
-
             
+
+            /*
             return courseList.Where(s => s.Name.ToUpper().Contains(query.ToUpper())
                 || s.Description.ToUpper().Contains(query.ToUpper())
                 || s.Code.ToUpper().Contains(query.ToUpper()));
 
-            
+            */
         }
 
 

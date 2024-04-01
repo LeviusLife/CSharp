@@ -82,7 +82,7 @@ namespace Canvas {
             };
 
 
-            studentService.Add(student);
+            studentService.AddorUpdate(student);
 
             //studentList.ForEach(student => Console.WriteLine(student));
             //studentService.studentList.ForEach(Console.WriteLine);

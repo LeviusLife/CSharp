@@ -43,7 +43,7 @@ namespace MAUI.Canvas.viewmodels
 
             if(student != null){
 
-                StudentService.Current.Add(student);
+                StudentService.Current.AddorUpdate(student);
 
             }
 
