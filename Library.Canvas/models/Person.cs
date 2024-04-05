@@ -5,12 +5,12 @@ namespace Library.Canvas.Models {
     public class Person {
 
 
-        public string Name{get; set;}
+        public string? Name{get; set;}
         //the name 
 
         public int Id {get; set;}
         
-        public string Classification{get; set;}
+        public string? Classification{get; set;}
         //I dont have to worry about putting a ? by the classification because
         //chars are set to \0 by default which is the null character
 
@@ -19,8 +19,6 @@ namespace Library.Canvas.Models {
 
         public Person() {
 
-            Name = string.Empty;
-            Classification = string.Empty;
         }
 
 
