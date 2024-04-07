@@ -39,6 +39,11 @@ namespace Library.Canvas.Services {
 
         }
 
+        public Person? Get(int id) {
+
+            return studentList.FirstOrDefault(c => c.Id == id);
+
+        }
 
         public static StudentService Current {
 
@@ -67,9 +72,10 @@ namespace Library.Canvas.Services {
             if(student.Id <= 0 )
             {
                 student.Id = LastId + 1;
+                studentList.Add(student);
             }
 
-            studentList.Add(student);
+            
 
         }
 

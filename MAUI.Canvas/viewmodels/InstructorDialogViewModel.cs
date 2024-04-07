@@ -43,7 +43,8 @@ namespace MAUI.Canvas.viewmodels
 
             else {
 
-                student = new Person { Name = "SUCCESS"};
+                student = StudentService.Current.Get(sId) ?? new Person();
+
 
             }
             
