@@ -68,4 +68,11 @@ public partial class InstructorsView : ContentPage
 	}
 
 
+	private void SearchClicked(object sender, EventArgs e) {
+
+		(BindingContext as InstructorsViewModel)?.Refresh();
+
+	}
+
+
 }

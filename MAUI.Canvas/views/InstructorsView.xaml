@@ -5,10 +5,15 @@
              Title="InstructorsView"
              NavigatedTo="ContentPage_NavigatedTo">
     <VerticalStackLayout>
-        <Label 
-            Text="INSTRUCTORSS!!!!!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Entry Text="{Binding Query}" Grid.Column="0"/>
+                <Button Text="Search" Clicked="SearchClicked" Grid.Column="1"/>
+            </Grid>
 
              <ListView
                 ItemsSource="{Binding Students}"
