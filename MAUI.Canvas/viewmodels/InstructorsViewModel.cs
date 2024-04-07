@@ -35,10 +35,10 @@ namespace MAUI.Canvas.viewmodels
 
         }
 
-        public Person SelectedStudent{
+        public Person? SelectedStudent{
 
             get; set;
-        }
+        } = new Person();
 
         public void AddStudent() {
 
@@ -56,28 +56,14 @@ namespace MAUI.Canvas.viewmodels
 
         public void Remove() {
 
-            studentSvc.Remove(SelectedStudent);
-            Refresh();
+            if(SelectedStudent != null) {
+                studentSvc.Remove(SelectedStudent);
+                 Refresh();
+            }
+            
+           
         }
 
-        /*
-        public string StudentName {
-
-            get  {
-
-                return underlyingPerson?.Name ?? string.Empty;
-            }
-
-            set {
-
-                underlyingPerson.Name = value;
-
-            }
-
-
-        }
-
-        */
 
 
          public InstructorsViewModel() {
@@ -85,6 +71,8 @@ namespace MAUI.Canvas.viewmodels
             //underlyingPerson = new Person { Name = "My Test Student"};
 
             studentSvc = StudentService.Current;
+
+            
         }
 
 

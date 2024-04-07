@@ -11,7 +11,9 @@ namespace Library.Canvas.Services {
 
         //private List<Person> studentList = new List<Person>();
         private List<Person> studentList;
-        private static StudentService? _instance;
+
+        private static object _lock = new object();
+        private static StudentService _instance;
 
         private int LastId
         {
@@ -42,10 +44,15 @@ namespace Library.Canvas.Services {
 
             get {
 
-                if (_instance == null) {
+                lock(_lock){
+
+                      if (_instance == null) {
 
                     _instance = new StudentService();
+                    
                 }
+                }
+              
 
                 return _instance;
 

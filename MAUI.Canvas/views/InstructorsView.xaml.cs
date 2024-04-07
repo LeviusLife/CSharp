@@ -1,3 +1,4 @@
+using MAUI.Canvas.Dialogs;
 using MAUI.Canvas.viewmodels;
 
 
@@ -21,7 +22,7 @@ public partial class InstructorsView : ContentPage
 
 	private void AddClicked(object sender, EventArgs e) {
 
-		Shell.Current.GoToAsync("//InstructorDetail?studentId={0}");
+		Shell.Current.GoToAsync("//InstructorDetail?studentId=0");
 		
 
 	}
@@ -33,7 +34,9 @@ public partial class InstructorsView : ContentPage
 		if (studentId != null)
 		{
 
-			Shell.Current.GoToAsync("//InstructorDetail?studentId={studentId}");
+			//Shell.Current.GoToAsync($"//InstructorDetail?studentId={studentId}");
+
+			 Navigation.PushAsync(new InstructorDialog(studentId.Value));
 
 		}
 		
@@ -50,7 +53,7 @@ public partial class InstructorsView : ContentPage
 
 	private void ContentPage_NavigatedTo(object sender, EventArgs e) {
 
-			(BindingContext as InstructorsViewModel).Refresh();
+			(BindingContext as InstructorsViewModel)!.Refresh();
 
 	}
 

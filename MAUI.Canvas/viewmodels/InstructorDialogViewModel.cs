@@ -21,6 +21,7 @@ namespace MAUI.Canvas.viewmodels
         }
 
         
+        
         public string Classification  {
 
             get {return student?.Classification ?? string.Empty;}
@@ -32,10 +33,20 @@ namespace MAUI.Canvas.viewmodels
         
 
 
-        public InstructorDialogViewModel(){
+        public InstructorDialogViewModel(int sId){
 
-            student = new Person();
+            if(sId == 0) 
+            {
+                student = new Person();
 
+            }
+
+            else {
+
+                student = new Person { Name = "SUCCESS"};
+
+            }
+            
         }
 
 
