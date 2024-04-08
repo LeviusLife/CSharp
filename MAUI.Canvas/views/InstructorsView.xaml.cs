@@ -74,5 +74,17 @@ public partial class InstructorsView : ContentPage
 
 	}
 
+	private void Toolbar_EnrollmentsClicked(object sender, EventArgs e)
+    {
+        //(BindingContext as InstructorViewViewModel).ShowEnrollments();
+    }
+
+    private void Toolbar_CoursesClicked(object sender, EventArgs e)
+    {
+        //(BindingContext as InstructorViewViewModel).ShowCourses();
+    }
+
+
+
 
 }

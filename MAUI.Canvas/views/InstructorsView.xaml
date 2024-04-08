@@ -4,6 +4,19 @@
              x:Class="MAUI.Canvas.Views.InstructorsView"
              Title="InstructorsView"
              NavigatedTo="ContentPage_NavigatedTo">
+
+
+        <ContentPage.ToolbarItems>
+            <ToolbarItem
+                Text="Enrollments"
+                Clicked="Toolbar_EnrollmentsClicked"
+                />
+            <ToolbarItem
+                Text="Courses"
+                Clicked="Toolbar_CoursesClicked"
+                />
+        </ContentPage.ToolbarItems>
+
     <VerticalStackLayout>
         
             <Grid>

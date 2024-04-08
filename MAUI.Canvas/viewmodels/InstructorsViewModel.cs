@@ -1,7 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using AddressBook;
 using Library.Canvas.Models;
 using Library.Canvas.Services;
 
@@ -29,7 +28,9 @@ namespace MAUI.Canvas.viewmodels
 
             get
             {
-                return new ObservableCollection<Person>(studentSvc.Students);
+
+
+                return new ObservableCollection<Person>(studentSvc.Students.ToList().Where(c => c?.Name?.ToUpper()?.Contains(Query?.ToUpper() ?? string.Empty)?? false));
             }
 
 
