@@ -12,6 +12,7 @@ namespace MAUI.Canvas.viewmodels
     {
 
          private StudentService studentSvc;
+         private CourseService courseSvc;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -31,6 +32,17 @@ namespace MAUI.Canvas.viewmodels
 
 
                 return new ObservableCollection<Person>(studentSvc.Students.ToList().Where(c => c?.Name?.ToUpper()?.Contains(Query?.ToUpper() ?? string.Empty)?? false));
+            }
+
+
+        }
+
+        public ObservableCollection<Course> Courses {
+
+            get{
+
+                return new ObservableCollection<Course>(courseSvc.Courses);
+
             }
 
 
@@ -70,6 +82,13 @@ namespace MAUI.Canvas.viewmodels
             get; set;
         } = new Person();
 
+
+        public Course? SelectedCourse{
+
+            get; set;
+
+        } = new Course();
+
         public void AddStudent() {
 
             studentSvc.AddorUpdate(new Person { Name = "This is a new client"});
@@ -80,6 +99,7 @@ namespace MAUI.Canvas.viewmodels
         public void Refresh() {
 
             NotifyPropertyChanged(nameof(Students));
+            NotifyPropertyChanged(nameof(Courses));
 
         }
 
@@ -95,11 +115,26 @@ namespace MAUI.Canvas.viewmodels
         }
 
 
+        public void RemoveCourse() {
+
+            if(SelectedCourse != null) {
+
+                courseSvc.Remove(SelectedCourse);
+                Refresh();
+
+            }
+
+
+
+        }
+
+
 
          public InstructorsViewModel() {
 
             //underlyingPerson = new Person { Name = "My Test Student"};
 
+            courseSvc = CourseService.Current;
             studentSvc = StudentService.Current;
             IsEnrollmentsVisible = true;
             IsCoursesVisible = false;

@@ -19,7 +19,16 @@ namespace Library.Canvas.Services {
 
          private CourseService() {
 
-            courseList = new List<Course>();
+            courseList = new List<Course>{
+
+                new Course{Name="Trig", Code="101", Description="Blah" },
+                new Course{Name="Calc 1", Code="102", Description="Blah" },
+                new Course{Name="Calc 2", Code="103", Description="Blah" },
+                new Course{Name="ODE", Code="104", Description="Blah" },
+                new Course{Name="Physics", Code="105", Description="Blah" },
+
+            };
+
             studentCervice = StudentService.Current;
         }
 
@@ -45,6 +54,13 @@ namespace Library.Canvas.Services {
 
             courseList.Add(courseC);
 
+        }
+
+
+        public void Remove(Course courseToDelete) {
+
+
+            courseList.Remove(courseToDelete);
         }
 
 

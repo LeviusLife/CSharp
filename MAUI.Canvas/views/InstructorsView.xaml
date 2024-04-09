@@ -44,6 +44,7 @@
             
             <Button Text="Add Student" Clicked="AddClicked"/>
             <Button Text="Update Student" Clicked="UpdateClicked"/>
+            <Button Text="Enroll Student(s)" Clicked="EnrollStudentClicked"/>
             <Button Text="Remove Student" Clicked="RemoveClicked"/>
             <Button Text="Back" Clicked="BackClicked"/>
 
@@ -58,10 +59,18 @@
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
 
+            <ListView
+                ItemsSource="{Binding Courses}"
+                SelectedItem="{Binding SelectedCourse}"
+                >
+
+            </ListView>    
+
             <Button Text="Add Course" Clicked="AddCourseClicked"/>
             <Button Text="Update Course" Clicked="UpdateCourseClicked"/>
             <Button Text="Remove Course" Clicked="RemoveCourseClicked"/>
             <Button Text="Back" Clicked="BackCourseClicked"/>
+
 
 
 
