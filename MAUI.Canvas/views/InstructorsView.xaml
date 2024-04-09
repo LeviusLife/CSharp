@@ -18,8 +18,14 @@
         </ContentPage.ToolbarItems>
 
     <VerticalStackLayout>
-        
-            <Grid>
+        <!--Enrollment shit -->
+        <VerticalStackLayout IsVisible="{Binding IsEnrollmentsVisible}">
+             <Label 
+                Text="University Enrollments"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10*"/>
                     <ColumnDefinition/>
@@ -39,7 +45,26 @@
             <Button Text="Add Student" Clicked="AddClicked"/>
             <Button Text="Update Student" Clicked="UpdateClicked"/>
             <Button Text="Remove Student" Clicked="RemoveClicked"/>
-            <Button Text="Add Course" Clicked="AddCourseClicked"/>
             <Button Text="Back" Clicked="BackClicked"/>
+
+            
+
+        </VerticalStackLayout>
+
+         <!--Course shit -->
+         <VerticalStackLayout IsVisible="{Binding IsCoursesVisible}">
+            <Label 
+                Text="University Course List"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+            <Button Text="Add Course" Clicked="AddCourseClicked"/>
+            <Button Text="Update Course" Clicked="UpdateCourseClicked"/>
+            <Button Text="Remove Course" Clicked="RemoveCourseClicked"/>
+            <Button Text="Back" Clicked="BackCourseClicked"/>
+
+
+
+         </VerticalStackLayout>  
     </VerticalStackLayout>
 </ContentPage>

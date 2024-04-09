@@ -36,6 +36,35 @@ namespace MAUI.Canvas.viewmodels
 
         }
 
+         public bool IsEnrollmentsVisible
+        {
+            get; set;
+        }
+
+
+         public bool IsCoursesVisible
+        {
+            get; set;
+        }
+
+         public void ShowEnrollments()
+        {
+            IsEnrollmentsVisible = true;
+            IsCoursesVisible = false;
+            NotifyPropertyChanged("IsEnrollmentsVisible");
+            NotifyPropertyChanged("IsCoursesVisible");
+        }
+
+         public void ShowCourses()
+        {
+            IsEnrollmentsVisible = false;
+            IsCoursesVisible = true;
+            NotifyPropertyChanged("IsEnrollmentsVisible");
+            NotifyPropertyChanged("IsCoursesVisible");
+        }
+
+
+
         public Person? SelectedStudent{
 
             get; set;
@@ -72,7 +101,8 @@ namespace MAUI.Canvas.viewmodels
             //underlyingPerson = new Person { Name = "My Test Student"};
 
             studentSvc = StudentService.Current;
-
+            IsEnrollmentsVisible = true;
+            IsCoursesVisible = false;
             
         }
 

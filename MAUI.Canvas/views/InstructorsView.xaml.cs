@@ -44,12 +44,8 @@ public partial class InstructorsView : ContentPage
 
 	}
 
-	private void AddCourseClicked(object sender, EventArgs e) {
-
-		Shell.Current.GoToAsync("//InstructorDetail");
-
-	}
-
+	
+	
 
 	private void ContentPage_NavigatedTo(object sender, EventArgs e) {
 
@@ -76,13 +72,45 @@ public partial class InstructorsView : ContentPage
 
 	private void Toolbar_EnrollmentsClicked(object sender, EventArgs e)
     {
-        //(BindingContext as InstructorViewViewModel).ShowEnrollments();
+        (BindingContext as InstructorsViewModel).ShowEnrollments();
     }
 
     private void Toolbar_CoursesClicked(object sender, EventArgs e)
     {
-        //(BindingContext as InstructorViewViewModel).ShowCourses();
+        (BindingContext as InstructorsViewModel).ShowCourses();
     }
+
+
+	//Course EventHandlers
+	
+	private void AddCourseClicked(object sender, EventArgs e) {
+
+		//Shell.Current.GoToAsync("//InstructorDetail");
+
+	}
+
+
+	private void UpdateCourseClicked(object sender, EventArgs e) {
+
+		//Shell.Current.GoToAsync("//InstructorDetail");
+
+	}
+
+
+	private void RemoveCourseClicked(object sender, EventArgs e) {
+
+		//Shell.Current.GoToAsync("//InstructorDetail");
+
+	}
+
+
+	private void BackCourseClicked(object sender, EventArgs e) {
+
+		//Shell.Current.GoToAsync("//InstructorDetail");
+
+	}
+
+
 
 
 
