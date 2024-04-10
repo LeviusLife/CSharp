@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI.Canvas.Dialogs.InstructorEnrollment"
-             Title="InstructorEnrollment">
+             Title="InstructorEnrollment"
+             NavigatedTo="ContentPage_NavigatedTo">
+             
     <VerticalStackLayout>
         <Label 
             Text="ENROLL STUDENTS!"
@@ -18,7 +20,21 @@
                 <Button Text="Search" Clicked="CourseEnrollmentSearchClicked" Grid.Column="1"/>
             </Grid>
 
-        
+        <ListView
+                ItemsSource="{Binding Coursez}" 
+                >
+
+            </ListView>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Text="Not Enrolled" Grid.Column="0"></Label>
+            <Label Text="Enrolled" Grid.Column="2"></Label>
+        </Grid>    
 
         <Button Text="Confirm" Clicked="ConfirmEnrollmentClicked"/>
         <Button Text="Back" Clicked="EnrollingBackClicked"/>

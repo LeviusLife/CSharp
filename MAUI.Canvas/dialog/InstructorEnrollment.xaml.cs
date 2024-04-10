@@ -1,3 +1,5 @@
+using MAUI.Canvas.viewmodels;
+
 namespace MAUI.Canvas.Dialogs;
 
 public partial class InstructorEnrollment : ContentPage
@@ -5,6 +7,7 @@ public partial class InstructorEnrollment : ContentPage
 	public InstructorEnrollment()
 	{
 		InitializeComponent();
+		BindingContext = new InstructorEnrollmentViewModel();
 	}
 
 
@@ -25,5 +28,11 @@ public partial class InstructorEnrollment : ContentPage
 		//Shell.Current.GoToAsync("//InstructorsView");
 
 	}
+
+	 private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
+    {
+        //(BindingContext as InstructorViewViewModel).ResetView();
+        (BindingContext as InstructorEnrollmentViewModel).RefreshView();
+    }
 
 }
