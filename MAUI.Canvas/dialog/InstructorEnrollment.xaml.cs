@@ -20,5 +20,10 @@ public partial class InstructorEnrollment : ContentPage
 
 	}
 
+	private void CourseEnrollmentSearchClicked(object sender, EventArgs e) {
+
+		//Shell.Current.GoToAsync("//InstructorsView");
+
+	}
 
 }

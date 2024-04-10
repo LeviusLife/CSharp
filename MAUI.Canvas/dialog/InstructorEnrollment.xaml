@@ -9,8 +9,19 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-           <Button Text="Confirm" Clicked="ConfirmEnrollmentClicked"/>
-            <Button Text="Back" Clicked="EnrollingBackClicked"/>
+         <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Entry  Grid.Column="0"/>
+                <Button Text="Search" Clicked="CourseEnrollmentSearchClicked" Grid.Column="1"/>
+            </Grid>
+
+        
+
+        <Button Text="Confirm" Clicked="ConfirmEnrollmentClicked"/>
+        <Button Text="Back" Clicked="EnrollingBackClicked"/>
         
 
 
