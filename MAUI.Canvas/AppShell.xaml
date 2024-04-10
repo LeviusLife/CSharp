@@ -36,4 +36,10 @@
         ContentTemplate="{DataTemplate local3:InstructorDialog}"
         Route="InstructorDetail" />  
 
+    <ShellContent
+        Title="Instructor Enrollment Process"
+        ContentTemplate="{DataTemplate local3:InstructorEnrollment}"
+        Route="InstructorEnrollmentProc" />
+
+
 </Shell>
