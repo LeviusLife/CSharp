@@ -22,6 +22,8 @@
 
         <ListView
                 ItemsSource="{Binding Coursez}" 
+                SelectedItem="{Binding SelectedCourse}"
+               
                 >
 
             </ListView>
@@ -35,6 +37,13 @@
             <Label Text="Not Enrolled" Grid.Column="0"></Label>
             <Label Text="Enrolled" Grid.Column="2"></Label>
         </Grid>    
+
+        <ListView 
+                ItemsSource="{Binding Roster}" 
+                >
+
+            </ListView>
+
 
         <Button Text="Confirm" Clicked="ConfirmEnrollmentClicked"/>
         <Button Text="Back" Clicked="EnrollingBackClicked"/>

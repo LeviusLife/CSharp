@@ -29,7 +29,7 @@ namespace Library.Canvas.Services {
 
             };
 
-            studentCervice = StudentService.Current;
+                studentCervice = StudentService.Current;
         }
 
 

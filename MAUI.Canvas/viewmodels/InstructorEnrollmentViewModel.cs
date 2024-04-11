@@ -12,10 +12,12 @@ public class InstructorEnrollmentViewModel: INotifyPropertyChanged
     public InstructorEnrollmentViewModel() {
 
          courseSvcForEnrollment = CourseService.Current;
+         studentSvcForEnrollment = StudentService.Current;
 
     }
 
      private CourseService courseSvcForEnrollment;
+     private StudentService studentSvcForEnrollment;
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -39,7 +41,33 @@ public class InstructorEnrollmentViewModel: INotifyPropertyChanged
 
         }
 
+        /*
+        public ObservableCollection<Person> Roster {
 
+            get {
+
+                return new ObservableCollection<Person>(SelectedCourse?.Roster);
+
+            }
+
+
+        }
+        */
+
+        public List<Person> Roster => SelectedCourse?.Roster;
+
+        /*
+        public ObservableCollection<Course> Roster {
+
+            get {
+
+                return new ObservableCollection<Course>(courseSvcForEnrollment.Current)
+            }
+
+
+        }
+
+    */
 
          public Course? SelectedCourse{
 
@@ -52,7 +80,20 @@ public class InstructorEnrollmentViewModel: INotifyPropertyChanged
         {
             //NotifyPropertyChanged(nameof(People));
             NotifyPropertyChanged(nameof(Coursez));
+            NotifyPropertyChanged(nameof(Roster));
         }
+
+       public void AddFakeStudents(string cId)
+       {
+            foreach(var studentstuff in studentSvcForEnrollment.Students){
+                 SelectedCourse?.Roster.Add(studentstuff);
+            }
+
+            RefreshView();
+           
+
+       }
+
 
 
 }
