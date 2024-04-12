@@ -41,5 +41,10 @@
         ContentTemplate="{DataTemplate local3:InstructorEnrollment}"
         Route="InstructorEnrollmentProc" />
 
+    <ShellContent
+        Title="Modules and Assignments"
+        ContentTemplate="{DataTemplate local2:ModulesAndAssignments}"
+        Route="ModulesAndAssignments"
+    />
 
 </Shell>

@@ -69,6 +69,7 @@
             <Button Text="Add Course" Clicked="AddCourseClicked"/>
             <Button Text="Update Course" Clicked="UpdateCourseClicked"/>
             <Button Text="Remove Course" Clicked="RemoveCourseClicked"/>
+            <Button Text="Modules and Assignments" Clicked="ModuleAssignmentClicked"/>
             <Button Text="Back" Clicked="BackCourseClicked"/>
 
 
