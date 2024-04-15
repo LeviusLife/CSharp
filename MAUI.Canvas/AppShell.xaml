@@ -47,4 +47,9 @@
         Route="ModulesAndAssignments"
     />
 
+    <ShellContent 
+        Title="Student's Course(s)"
+        ContentTemplate="{DataTemplate local2:CoursesView}"
+        Route="CoursesView"  />
+
 </Shell>

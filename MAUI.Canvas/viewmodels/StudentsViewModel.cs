@@ -24,6 +24,9 @@ namespace MAUI.Canvas.viewmodels
         }
 
 
+         public string Query {get; set;}
+
+
 
         public ObservableCollection<Person> Students {
 

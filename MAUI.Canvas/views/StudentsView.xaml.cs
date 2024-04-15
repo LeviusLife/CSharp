@@ -27,4 +27,17 @@ public partial class StudentsView : ContentPage
 
 	}
 
+	private void StudentSearchClicked(object sender, EventArgs e) {
+
+		//(BindingContext  as StudentsViewModel)?.AddStudent();
+
+	}
+
+	private void StudentCourseClicked(object sender, EventArgs e) {
+
+		Shell.Current.GoToAsync("//CoursesView");
+
+	}
+
+
 }

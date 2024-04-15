@@ -37,7 +37,7 @@ public partial class ModulesAndAssignments : ContentPage
 
 	private void BackModuleClicked(object sender, EventArgs e)
     {
-        //(BindingContext as InstructorsViewModel)!.ShowEnrollments();
+      Shell.Current.GoToAsync($"//InstructorsView");
     }
 
 
@@ -57,7 +57,7 @@ public partial class ModulesAndAssignments : ContentPage
 
 	private void BackAssignmentClicked(object sender, EventArgs e)
     {
-        //(BindingContext as InstructorsViewModel)!.ShowEnrollments();
+       Shell.Current.GoToAsync($"//InstructorsView");
     }
 
 

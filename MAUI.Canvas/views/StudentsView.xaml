@@ -9,12 +9,23 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         
+         <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Entry Text="{Binding Query}" Grid.Column="0"/>
+                <Button Text="Search" Clicked="StudentSearchClicked" Grid.Column="1"/>
+            </Grid>
+
+
         <ListView
                 ItemsSource="{Binding Students}">
 
         </ListView>
 
         <Button Text="Add Student" Clicked="AddClicked"/>
+        <Button Text="View Student's Course(s)" Clicked="StudentCourseClicked"/>
         <Button Text="Back" Clicked="BackClicked"/>
     </VerticalStackLayout>
 </ContentPage>
