@@ -3,13 +3,56 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI.Canvas.Views.ModulesAndAssignments"
              Title="ModulesAndAssignments">
-    <VerticalStackLayout>
-        <Label 
-            Text="Modules and Assignments"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+
+
+     <ContentPage.ToolbarItems>
+            <ToolbarItem
+                Text="Modules"
+                Clicked="Toolbar_ModulesClicked"
+                />
+            <ToolbarItem
+                Text="Assignments"
+                Clicked="Toolbar_AssignmentsClicked"
+                />
+        </ContentPage.ToolbarItems>
+
+     <VerticalStackLayout>
+        <!--Module shit -->
+        <VerticalStackLayout IsVisible="{Binding IsModulesVisible}">
+             <Label 
+                Text="Modules Section"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+            
+
+            
+            
+            <Button Text="Add Module" Clicked="AddModuleClicked"/>
+            <Button Text="Delete Module" Clicked="DeleteModuleClicked"/>
+            <Button Text="Back" Clicked="BackModuleClicked"/>
+
+            
+
+        </VerticalStackLayout>
+
+         <!--Assignment shit -->
+         <VerticalStackLayout IsVisible="{Binding IsAssignmentsVisible}">
+            <Label 
+                Text="Assignment Section"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+
+           
+            <Button Text="Add Assignment" Clicked="AddAssignmentClicked"/>
+            <Button Text="Delete Assignment" Clicked="DeleteAssignmentClicked"/>
+            <Button Text="Back" Clicked="BackAssignmentClicked"/>
 
 
 
+
+         </VerticalStackLayout>  
     </VerticalStackLayout>
+
+   
 </ContentPage>
