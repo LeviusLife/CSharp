@@ -11,10 +11,29 @@ namespace MAUI.Canvas.Views
     	}
 
 
-		private void CoursesViewClicked(object sender, EventArgs e) {
+		private void ViewCourseClicked(object sender, EventArgs e) 
+		{
 
-		Shell.Current.GoToAsync("//StudentsView");
+			//Shell.Current.GoToAsync("//StudentsView");
 
-	}
+		}
+
+
+		private void CoursesViewBackClicked(object sender, EventArgs e) 
+		{
+
+			Shell.Current.GoToAsync("//StudentsView");
+
+		}
+
+
+	    private void CoursesViewSearchClicked(object sender, EventArgs e) 
+		{
+
+			//Shell.Current.GoToAsync("//StudentsView");
+
+		}
+
+
     }
 }

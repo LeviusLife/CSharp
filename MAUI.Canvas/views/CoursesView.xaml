@@ -9,6 +9,16 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <Button Text="Back" Clicked="CoursesViewClicked"/>
+        <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Entry  Grid.Column="0"/>
+                <Button Text="Search" Clicked="CoursesViewSearchClicked" Grid.Column="1"/>
+            </Grid>
+
+        <Button Text="View Course" Clicked="ViewCourseClicked" />
+        <Button Text="Back" Clicked="CoursesViewBackClicked"/>
     </VerticalStackLayout>
 </ContentPage>
