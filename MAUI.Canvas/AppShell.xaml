@@ -52,4 +52,9 @@
         ContentTemplate="{DataTemplate local2:CoursesView}"
         Route="CoursesView"  />
 
+    <ShellContent
+        Title="Course Detail"
+        ContentTemplate="{DataTemplate local3:CourseDialog}"
+        Route="CourseDetail"  />
+
 </Shell>

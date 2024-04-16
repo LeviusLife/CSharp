@@ -96,6 +96,7 @@ namespace MAUI.Canvas.viewmodels
 
         }
 
+
         public void Refresh() {
 
             NotifyPropertyChanged(nameof(Students));

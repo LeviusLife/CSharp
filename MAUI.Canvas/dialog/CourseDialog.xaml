@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.Canvas.Dialogs.CourseDialog"
+             Title="CourseDialog">
+
+    <VerticalStackLayout>
+        <Label 
+            Text="Add Course?"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label 
+                Text="Prefix"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" 
+                Grid.Row="0"
+                Grid.Column="0"
+                />
+            <Entry 
+             
+                Grid.Row="1"
+                Grid.Column="0"
+                ></Entry>
+            <Label 
+                Text="Name"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" 
+                Grid.Row="0"
+                Grid.Column="1"/>
+            <Entry 
+               
+                Grid.Row="1"
+                Grid.Column="1"></Entry>
+            
+        </Grid>
+        
+         <Label 
+            Text="Description"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Entry ></Entry>
+
+
+         <Button Text="Ok" Clicked="OkCourseClicked"/>
+         <Button Text="Cancel" Clicked="CancelCourseClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

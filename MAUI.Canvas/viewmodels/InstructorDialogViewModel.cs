@@ -7,8 +7,7 @@ namespace MAUI.Canvas.viewmodels
     {
 
          private Person? student;
-
-
+              
         public string Name {
             get {return student?.Name ?? string.Empty;}
             set {
@@ -30,7 +29,7 @@ namespace MAUI.Canvas.viewmodels
                 student.Classification = value;}
 
         }
-        
+
 
 
         public InstructorDialogViewModel(int sId){
