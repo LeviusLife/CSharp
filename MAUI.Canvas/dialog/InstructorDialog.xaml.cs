@@ -3,16 +3,16 @@ using MAUI.Canvas.viewmodels;
 
 namespace MAUI.Canvas.Dialogs
 {
-	//[QueryProperty(nameof(StudentId), "studentId")]
+	[QueryProperty(nameof(StudentId), "studentId")]
     public partial class InstructorDialog : ContentPage
     {
-		/*
-		public int studentId
+		
+		public int StudentId
 		{
 			get; set;
 		}
 
-		*/
+		
 
     	public InstructorDialog(int studentId)
     	{
@@ -43,7 +43,7 @@ namespace MAUI.Canvas.Dialogs
 			
     		private void ContentPage_NavigatedTo(object sender, EventArgs e) {
 
-    			//BindingContext = new InstructorDialogViewModel(studentId);
+    			BindingContext = new InstructorDialogViewModel(StudentId);
 
     		}
 			
