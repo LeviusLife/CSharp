@@ -36,6 +36,7 @@ namespace MAUI.Canvas.Dialogs
 				
     			(BindingContext as CourseDialogViewModel)?.AddCourse();
     			Shell.Current.GoToAsync("//InstructorsView");
+				BindingContext = new CourseDialogViewModel(0);
 				
 
     		}
@@ -43,7 +44,7 @@ namespace MAUI.Canvas.Dialogs
 
 			private void ContentPage_NavigatedTo(object sender, EventArgs e) {
 
-    			BindingContext = new CourseDialogViewModel(CourseId);
+    			//BindingContext = new CourseDialogViewModel(CourseId);
 
     		}
 
