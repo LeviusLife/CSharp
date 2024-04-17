@@ -36,6 +36,7 @@ namespace MAUI.Canvas.Dialogs
 
     			(BindingContext as InstructorDialogViewModel)?.AddStudent();
     			Shell.Current.GoToAsync("//InstructorsView");
+				BindingContext = new InstructorDialogViewModel(0);
 
     		}
 
@@ -43,7 +44,7 @@ namespace MAUI.Canvas.Dialogs
 			
     		private void ContentPage_NavigatedTo(object sender, EventArgs e) {
 
-    			BindingContext = new InstructorDialogViewModel(StudentId);
+    			//BindingContext = new InstructorDialogViewModel(StudentId);
 
     		}
 			
