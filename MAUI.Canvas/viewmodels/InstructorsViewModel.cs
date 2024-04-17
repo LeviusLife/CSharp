@@ -41,7 +41,7 @@ namespace MAUI.Canvas.viewmodels
 
             get{
 
-                return new ObservableCollection<Course>(courseSvc.Courses);
+                return new ObservableCollection<Course>(courseSvc.Courses.ToList().Where(c => c?.Name?.ToUpper()?.Contains(Query?.ToUpper() ?? string.Empty)?? false));
 
             }
 

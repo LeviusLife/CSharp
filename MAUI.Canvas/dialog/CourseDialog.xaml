@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUI.Canvas.Dialogs.CourseDialog"
-             Title="CourseDialog">
+             Title="CourseDialog"
+             NavigatedTo="ContentPage_NavigatedTo">
 
     <VerticalStackLayout>
         <Label 
@@ -20,14 +21,14 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Label 
-                Text="Prefix"
+                Text="Code"
                 VerticalOptions="Center" 
                 HorizontalOptions="Start" 
                 Grid.Row="0"
                 Grid.Column="0"
                 />
             <Entry 
-             
+                Text="{Binding Code}"
                 Grid.Row="1"
                 Grid.Column="0"
                 ></Entry>
@@ -38,7 +39,7 @@
                 Grid.Row="0"
                 Grid.Column="1"/>
             <Entry 
-               
+               Text="{Binding Name}"
                 Grid.Row="1"
                 Grid.Column="1"></Entry>
             
@@ -48,7 +49,7 @@
             Text="Description"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <Entry ></Entry>
+        <Entry Text="{Binding Description}" ></Entry>
 
 
          <Button Text="Ok" Clicked="OkCourseClicked"/>

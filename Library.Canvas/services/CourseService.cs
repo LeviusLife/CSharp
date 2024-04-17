@@ -15,21 +15,37 @@ namespace Library.Canvas.Services {
          private static CourseService? _instance;
 
         
+         private int LastId
+        {
+
+            get
+            {
+                return courseList.Select(c => c.Id).Max();
+            }
+
+        }
 
 
          private CourseService() {
 
             courseList = new List<Course>{
 
-                new Course{Name="Trig", Code="101", Description="Blah" },
-                new Course{Name="Calc 1", Code="102", Description="Blah" },
-                new Course{Name="Calc 2", Code="103", Description="Blah" },
-                new Course{Name="ODE", Code="104", Description="Blah" },
-                new Course{Name="Physics", Code="105", Description="Blah" },
+                new Course{Name="Trig", Code="101", Description="Blah", Id = 1 },
+                new Course{Name="Calc 1", Code="102", Description="Blah", Id = 2 },
+                new Course{Name="Calc 2", Code="103", Description="Blah", Id = 3 },
+                new Course{Name="ODE", Code="104", Description="Blah", Id = 4 },
+                new Course{Name="Physics", Code="105", Description="Blah", Id = 5 },
 
             };
 
                 studentCervice = StudentService.Current;
+        }
+
+
+         public Course? Get(int id) {
+
+            return courseList.FirstOrDefault(c => c.Id == id);
+
         }
 
 
@@ -53,6 +69,18 @@ namespace Library.Canvas.Services {
         public void Add(Course courseC) {
 
             courseList.Add(courseC);
+
+        }
+
+         public void AddorUpdate(Course course) {
+
+            if(course.Id <= 0 )
+            {
+                course.Id = LastId + 1;
+                courseList.Add(course);
+            }
+
+            
 
         }
 

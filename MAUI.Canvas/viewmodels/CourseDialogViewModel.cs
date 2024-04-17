@@ -50,8 +50,36 @@ namespace MAUI.Canvas.viewmodels
         }
         
 
-        public CourseDialogViewModel() {
-            
+         public void AddCourse() {
+
+            if(course != null){
+
+                CourseService.Current.AddorUpdate(course);
+
+            }
+
+
+        }
+
+
+
+        public CourseDialogViewModel(int cId) {
+
+             if(cId == 0) 
+            {
+                course = new Course();
+
+            }
+
+            else {
+
+                course = CourseService.Current.Get(cId) ?? new Course();
+
+
+            }
+
+
+
         }
 
 
