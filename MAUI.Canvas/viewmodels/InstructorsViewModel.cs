@@ -96,6 +96,25 @@ namespace MAUI.Canvas.viewmodels
 
         }
 
+        public void ResetView()
+        {
+            Query = string.Empty;
+            NotifyPropertyChanged(nameof(Query));
+        }
+
+        public void ResetCourse() 
+        {
+            SelectedCourse = null;
+            NotifyPropertyChanged(nameof(SelectedCourse));
+
+        }
+
+         public void ResetStudent() 
+        {
+            SelectedStudent = null;
+            NotifyPropertyChanged(nameof(SelectedStudent));
+
+        }
 
         public void Refresh() {
 

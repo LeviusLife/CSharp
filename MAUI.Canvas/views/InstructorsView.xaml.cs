@@ -22,8 +22,24 @@ public partial class InstructorsView : ContentPage
 
 	private void AddClicked(object sender, EventArgs e) {
 
-		Shell.Current.GoToAsync("//InstructorDetail?studentId=0");
+		Shell.Current.GoToAsync($"//InstructorDetail?studentId={0}");
 		
+
+	}
+
+	private void EnrollStudentClicked(object sender, EventArgs e) {
+
+		//Shell.Current.GoToAsync($"//InstructorEnrollmentProc");
+
+		var studentId = (BindingContext as InstructorsViewModel)?.SelectedStudent?.Id;
+
+		if (studentId != null)
+		{
+
+			Navigation.PushAsync(new InstructorEnrollment(studentId.Value));
+
+		}
+
 
 	}
 
@@ -40,7 +56,7 @@ public partial class InstructorsView : ContentPage
 
 		}
 		
-		
+		(BindingContext as InstructorsViewModel)?.ResetStudent();
 
 	}
 
@@ -59,7 +75,7 @@ public partial class InstructorsView : ContentPage
 
 	private void RemoveClicked(object sender, EventArgs e) {
 
-		(BindingContext as InstructorsViewModel).Remove();
+		(BindingContext as InstructorsViewModel)!.Remove();
 
 	}
 
@@ -72,12 +88,12 @@ public partial class InstructorsView : ContentPage
 
 	private void Toolbar_EnrollmentsClicked(object sender, EventArgs e)
     {
-        (BindingContext as InstructorsViewModel).ShowEnrollments();
+        (BindingContext as InstructorsViewModel)!.ShowEnrollments();
     }
 
     private void Toolbar_CoursesClicked(object sender, EventArgs e)
     {
-        (BindingContext as InstructorsViewModel).ShowCourses();
+        (BindingContext as InstructorsViewModel)!.ShowCourses();
     }
 
 
@@ -85,31 +101,51 @@ public partial class InstructorsView : ContentPage
 	
 	private void AddCourseClicked(object sender, EventArgs e) {
 
-		//Shell.Current.GoToAsync("//InstructorDetail");
+		Shell.Current.GoToAsync($"//CourseDetail?courseId={0}");
 
 	}
 
 
 	private void UpdateCourseClicked(object sender, EventArgs e) {
+		
+		var courseId = (BindingContext as InstructorsViewModel)?.SelectedCourse?.Id;
 
-		//Shell.Current.GoToAsync("//InstructorDetail");
+		if (courseId != null)
+		{
+
+			//Shell.Current.GoToAsync($"//CourseDetail?courseId={courseId}");
+
+			 Navigation.PushAsync(new CourseDialog(courseId.Value));
+
+		}
+		
+		(BindingContext as InstructorsViewModel)?.ResetCourse();
 
 	}
 
 
 	private void RemoveCourseClicked(object sender, EventArgs e) {
 
-		//Shell.Current.GoToAsync("//InstructorDetail");
+		(BindingContext as InstructorsViewModel)!.RemoveCourse();
 
 	}
 
 
 	private void BackCourseClicked(object sender, EventArgs e) {
 
-		//Shell.Current.GoToAsync("//InstructorDetail");
+		Shell.Current.GoToAsync("//MainPage");
 
 	}
 
+	private void ModuleAssignmentClicked(object sender, EventArgs e) {
+
+		Shell.Current.GoToAsync($"//ModulesAndAssignments");
+
+		
+
+	}
+
+	
 
 
 
