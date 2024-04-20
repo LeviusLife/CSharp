@@ -6,16 +6,65 @@ using System.Runtime.CompilerServices;
 
 namespace MAUI.Canvas.viewmodels;
 
-public class InstructorEnrollmentViewModel: INotifyPropertyChanged
+//put INotifyPropertyChanged right ***************** here
+public class InstructorEnrollmentViewModel
 {
+
+    private Person? studentEnroll;
+  
+      public string Name {
+            get {return studentEnroll?.Name ?? string.Empty;}
+            set {
+
+                if(studentEnroll == null) studentEnroll = new Person();
+                
+                studentEnroll.Name = value;
+
+            }
+        }
+
+        
+        
+        public string Classification  {
+
+            get {return studentEnroll?.Classification ?? string.Empty;}
+            set { 
+                if(studentEnroll == null) studentEnroll = new Person();
+                studentEnroll.Classification = value;}
+
+        }
 
     public InstructorEnrollmentViewModel() {
 
-         courseSvcForEnrollment = CourseService.Current;
-         studentSvcForEnrollment = StudentService.Current;
-
     }
 
+
+   
+   /*
+    
+     public InstructorEnrollmentViewModel(int sId) {
+      
+      /*
+        
+       if(sId == 0) 
+            {
+                studentEnroll = new Person();
+
+            }
+
+            else {
+
+                studentEnroll = StudentService.Current.Get(sId) ?? new Person();
+
+
+            }
+            
+    }
+
+    */
+    
+    /*
+    
      private CourseService courseSvcForEnrollment;
      private StudentService studentSvcForEnrollment;
 
@@ -40,8 +89,9 @@ public class InstructorEnrollmentViewModel: INotifyPropertyChanged
 
 
         }
+        
 
-        /*
+      /*  
         public ObservableCollection<Person> Roster {
 
             get {
@@ -54,7 +104,8 @@ public class InstructorEnrollmentViewModel: INotifyPropertyChanged
         }
         */
 
-        public List<Person> Roster => SelectedCourse?.Roster;
+        
+        //public List<Person> Roster => SelectedCourse?.Roster;
 
         /*
         public ObservableCollection<Course> Roster {
@@ -69,20 +120,25 @@ public class InstructorEnrollmentViewModel: INotifyPropertyChanged
 
     */
 
+
+        /*
          public Course? SelectedCourse{
 
             get; set;
 
         } = new Course();
+        */
 
-
+/*
         public void RefreshView()
         {
             //NotifyPropertyChanged(nameof(People));
             NotifyPropertyChanged(nameof(Coursez));
             NotifyPropertyChanged(nameof(Roster));
         }
+*/
 
+/*
        public void AddFakeStudents(string cId)
        {
             foreach(var studentstuff in studentSvcForEnrollment.Students){
@@ -94,7 +150,7 @@ public class InstructorEnrollmentViewModel: INotifyPropertyChanged
 
        }
 
-
+*/
 
 }
 

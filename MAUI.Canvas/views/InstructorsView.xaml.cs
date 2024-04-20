@@ -29,8 +29,9 @@ public partial class InstructorsView : ContentPage
 
 	private void EnrollStudentClicked(object sender, EventArgs e) {
 
-		//Shell.Current.GoToAsync($"//InstructorEnrollmentProc");
+		Shell.Current.GoToAsync($"//InstructorEnrollmentProc");
 
+		/*
 		var studentId = (BindingContext as InstructorsViewModel)?.SelectedStudent?.Id;
 
 		if (studentId != null)
@@ -39,7 +40,7 @@ public partial class InstructorsView : ContentPage
 			Navigation.PushAsync(new InstructorEnrollment(studentId.Value));
 
 		}
-
+		*/
 
 	}
 
