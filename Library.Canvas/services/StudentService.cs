@@ -13,7 +13,7 @@ namespace Library.Canvas.Services {
         private List<Person> studentList;
 
         private static object _lock = new object();
-        private static StudentService _instance;
+        private static StudentService? _instance;
 
         private int LastId
         {

@@ -21,13 +21,13 @@ public partial class InstructorEnrollment : ContentPage
 		BindingContext = new InstructorEnrollmentViewModel();
 	}
 
-	/*
+	
 	public InstructorEnrollment(int studentId)
 	{
 		InitializeComponent();
 		BindingContext = new InstructorEnrollmentViewModel(studentId);
 	}
-	*/
+	
 
 
 /*
@@ -50,21 +50,23 @@ public partial class InstructorEnrollment : ContentPage
 
 	private void ConfirmEnrollmentClicked(object sender, EventArgs e) {
 
-		/*
-		var courseId = (BindingContext as InstructorEnrollmentViewModel)?.SelectedCourse?.Code;
+		
+		int courseId = (int)((BindingContext as InstructorEnrollmentViewModel)?.SelectedCourse?.Id ?? 0);
 
 		
-		if (courseId != null)
+		if (courseId > 0)
 		{
 			
 
-			(BindingContext as InstructorEnrollmentViewModel)?.AddFakeStudents(courseId);
-
+			//(BindingContext as InstructorEnrollmentViewModel)?.AddFakeStudents(courseId);
+			(BindingContext as InstructorEnrollmentViewModel)?.AddStudenttoCourse(courseId);
 			//Shell.Current.GoToAsync($"//InstructorDetail?studentId={studentId}");
 			 //Navigation.PushAsync(new InstructorDialog(studentId.Value));
 
 		}
-		*/
+
+		Shell.Current.GoToAsync("//InstructorsView");
+		
 	}
 
 	private void EnrollingBackClicked(object sender, EventArgs e) {

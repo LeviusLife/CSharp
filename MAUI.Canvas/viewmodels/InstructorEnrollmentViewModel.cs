@@ -3,13 +3,22 @@ using Library.Canvas.Models;
 using Library.Canvas.Services;
 using System.Collections.ObjectModel;
 using System.Runtime.CompilerServices;
+using System.Diagnostics.CodeAnalysis;
 
 namespace MAUI.Canvas.viewmodels;
 
 //put INotifyPropertyChanged right ***************** here
+
+//[QueryProperty(nameof(StudentId), "studentId")]
 public class InstructorEnrollmentViewModel
 {
 
+   /*
+    public int StudentId
+		{
+			get; set;
+		}
+        */
     private Person? studentEnroll;
   
       public string Name {
@@ -23,8 +32,9 @@ public class InstructorEnrollmentViewModel
             }
         }
 
+
         
-        
+        //what are these properties for? I've already forgotten. 
         public string Classification  {
 
             get {return studentEnroll?.Classification ?? string.Empty;}
@@ -34,11 +44,52 @@ public class InstructorEnrollmentViewModel
 
         }
 
-    public InstructorEnrollmentViewModel() {
 
+        public int studentIdForEnrollment {
+
+            get; set;
+            
+            /*
+            set {
+
+                if (studentIdForEnrollment != value) 
+                {
+
+                    studentIdForEnrollment = value;
+
+                }
+
+            }
+            */
+        }
+        
+    public InstructorEnrollmentViewModel() {
+        
+        courseSvcForEnrollment = CourseService.Current;
+        studentSvcForEnrollment = StudentService.Current;
+        
     }
 
+    public InstructorEnrollmentViewModel(int sId)
+    {
 
+
+        courseSvcForEnrollment = CourseService.Current;
+        studentSvcForEnrollment = StudentService.Current;
+        
+        if (sId == 0) {
+
+        }
+
+        else {
+
+            studentIdForEnrollment = sId;
+
+        }
+
+
+
+    }
    
    /*
     
@@ -63,7 +114,7 @@ public class InstructorEnrollmentViewModel
 
     */
     
-    /*
+    
     
      private CourseService courseSvcForEnrollment;
      private StudentService studentSvcForEnrollment;
@@ -77,7 +128,7 @@ public class InstructorEnrollmentViewModel
         }
 
 
-         public string? Query {get; set;}
+         public string? QueryForEnrollment {get; set;}
 
          public ObservableCollection<Course> Coursez {
 
@@ -105,7 +156,7 @@ public class InstructorEnrollmentViewModel
         */
 
         
-        //public List<Person> Roster => SelectedCourse?.Roster;
+        public List<Person> Roster => SelectedCourse?.Roster;
 
         /*
         public ObservableCollection<Course> Roster {
@@ -121,24 +172,24 @@ public class InstructorEnrollmentViewModel
     */
 
 
-        /*
+        
          public Course? SelectedCourse{
 
             get; set;
 
         } = new Course();
-        */
+        
 
-/*
+
         public void RefreshView()
         {
             //NotifyPropertyChanged(nameof(People));
             NotifyPropertyChanged(nameof(Coursez));
             NotifyPropertyChanged(nameof(Roster));
         }
-*/
 
-/*
+
+
        public void AddFakeStudents(string cId)
        {
             foreach(var studentstuff in studentSvcForEnrollment.Students){
@@ -150,7 +201,27 @@ public class InstructorEnrollmentViewModel
 
        }
 
-*/
+       public void AddStudenttoCourse(int cId) 
+       {    
+        
+            //courseSvcForEnrollment.Get(cId).Roster.Contains();
+        
+            var found = courseSvcForEnrollment.Get(cId)!.Roster.FirstOrDefault( c => c.Id == studentIdForEnrollment);
+
+            if (found == null) {
+
+                courseSvcForEnrollment.Get(cId)!.Roster.Add(studentSvcForEnrollment.Get(studentIdForEnrollment)!);
+
+
+             }
+            //int realNumber = int.Parse(cId);
+            //if(courseSvcForEnrollment.Get(cId).Contain)
+         
+           
+        
+       }
+
+
 
 }
 
