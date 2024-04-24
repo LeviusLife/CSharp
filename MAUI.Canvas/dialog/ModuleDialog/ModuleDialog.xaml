@@ -9,6 +9,21 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
+        <Label 
+            Text="Name"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+        
+        />
+        <Entry></Entry>
+
+        <Label
+            Text="Description"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+        />
+        <Entry></Entry>
+
         <Button Text="Confirm" Clicked="ModuleConfirmClicked"/>
         <Button Text="Cancel" Clicked="ModuleCancelClicked"/>
     </VerticalStackLayout>

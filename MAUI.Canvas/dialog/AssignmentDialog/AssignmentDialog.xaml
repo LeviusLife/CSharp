@@ -8,7 +8,56 @@
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Label
+            Text="Name"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"  />
+        <Entry ></Entry>
 
+
+        <Grid>
+        
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="8*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label 
+                Text="Total Available Points"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" 
+                Grid.Row="0"
+                Grid.Column="0"
+                />
+            <Entry 
+               
+                Grid.Row="1"
+                Grid.Column="0"
+                ></Entry>
+            <Label 
+                Text="Due Date"
+                VerticalOptions="Center" 
+                HorizontalOptions="Start" 
+                Grid.Row="0"
+                Grid.Column="1"/>
+            <Entry 
+               
+                Grid.Row="1"
+                Grid.Column="1"></Entry>
+        
+        </Grid>
+
+
+
+
+        <Label
+            Text="Description"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
+        <Entry ></Entry>
 
         <Button Text="Confirm" Clicked="AssignmentOkClicked"/>
         <Button Text="Cancel" Clicked="AssignmentCancelClicked"/>
