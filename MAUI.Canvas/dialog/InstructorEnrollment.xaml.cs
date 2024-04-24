@@ -69,6 +69,7 @@ public partial class InstructorEnrollment : ContentPage
 		
 	}
 
+
 	private void EnrollingBackClicked(object sender, EventArgs e) {
 
 		Shell.Current.GoToAsync("//InstructorsView");

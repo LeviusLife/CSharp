@@ -41,12 +41,12 @@ public partial class ModulesAndAssignments : ContentPage
     
     private void AddModuleClicked(object sender, EventArgs e)
     {
-        //(BindingContext as InstructorsViewModel)!.ShowEnrollments();
+        Shell.Current.GoToAsync("//ModuleDetail");
     }
 
     private void EditModuleClicked(object sender, EventArgs e)
     {
-        //(BindingContext as InstructorsViewModel)!.ShowEnrollments();
+        Shell.Current.GoToAsync("//ModuleDetail");
     }
 
 	private void DeleteModuleClicked(object sender, EventArgs e)
