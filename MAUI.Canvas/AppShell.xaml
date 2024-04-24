@@ -57,4 +57,9 @@
         ContentTemplate="{DataTemplate local3:CourseDialog}"
         Route="CourseDetail"  />
 
+    <ShellContent
+        Title="Assignment Detail"
+        ContentTemplate="{DataTemplate local3:AssignmentDialog}"
+        Route="AssignmentDetail"   />
+
 </Shell>

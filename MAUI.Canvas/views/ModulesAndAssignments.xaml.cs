@@ -10,6 +10,12 @@ public partial class ModulesAndAssignments : ContentPage
 		BindingContext = new ModulesAndAssignmentsViewModel();
 	}
 
+   public ModulesAndAssignments(int courseId)
+	{
+		InitializeComponent();
+		BindingContext = new ModulesAndAssignmentsViewModel(courseId);
+	}
+
 	private void Toolbar_ModulesClicked(object sender, EventArgs e)
     {
         (BindingContext as ModulesAndAssignmentsViewModel)!.ShowModules();
@@ -25,7 +31,20 @@ public partial class ModulesAndAssignments : ContentPage
 	//Module Event Handlers
 	//*************************************************
 
-	private void AddModuleClicked(object sender, EventArgs e)
+	private void ModulesSearchClicked(object sender, EventArgs e)
+    {
+        //(BindingContext as InstructorsViewModel)!.ShowEnrollments();
+    }
+    
+    
+    
+    
+    private void AddModuleClicked(object sender, EventArgs e)
+    {
+        //(BindingContext as InstructorsViewModel)!.ShowEnrollments();
+    }
+
+    private void EditModuleClicked(object sender, EventArgs e)
     {
         //(BindingContext as InstructorsViewModel)!.ShowEnrollments();
     }
@@ -45,9 +64,22 @@ public partial class ModulesAndAssignments : ContentPage
 	//Assignments EventHandlers
 	//***************************************************
 
-	private void AddAssignmentClicked(object sender, EventArgs e)
+    private void AssignmentsSearchClicked(object sender, EventArgs e)
     {
         //(BindingContext as InstructorsViewModel)!.ShowEnrollments();
+    }
+
+
+
+
+	private void AddAssignmentClicked(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync($"//AssignmentDetail");
+    }
+
+    private void EditAssignmentClicked(object sender, EventArgs e)
+    {
+         Shell.Current.GoToAsync($"//AssignmentDetail");
     }
 
 	private void DeleteAssignmentClicked(object sender, EventArgs e)

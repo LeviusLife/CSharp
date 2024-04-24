@@ -141,8 +141,20 @@ public partial class InstructorsView : ContentPage
 	private void ModuleAssignmentClicked(object sender, EventArgs e) {
 
 		Shell.Current.GoToAsync($"//ModulesAndAssignments");
+		/*
+		var courseId = (BindingContext as InstructorsViewModel)?.SelectedCourse?.Id;
 
+		if (courseId != null)
+		{
+
+			 //Navigation.PushAsync(new InstructorDialog(studentId.Value));
+			 Navigation.PushAsync(new ModulesAndAssignments(courseId.Value));
+
+		}
 		
+		//(BindingContext as InstructorsViewModel)?.ResetStudent();
+
+		*/
 
 	}
 

@@ -20,6 +20,11 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
 
         }
 
+        public int CourseIdForMA
+        {
+            get; set;
+
+        }
 
              public bool IsModulesVisible
         {
@@ -56,6 +61,30 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
         
 
     }
+
+    public ModulesAndAssignmentsViewModel(int cId)
+    {
+
+        IsModulesVisible = true;
+        IsAssignmentsVisible = false;
+
+         if (cId == 0) {
+
+            //what should I do if it is 0?
+
+        }
+
+        else {
+
+            CourseIdForMA = cId;
+
+        }
+        
+
+    }
+
+
+
 
 
 }

@@ -79,6 +79,8 @@ public class InstructorEnrollmentViewModel
         
         if (sId == 0) {
 
+            //what should I do if it is 0?
+
         }
 
         else {

@@ -24,11 +24,22 @@
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
 
+             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Entry       Grid.Column="0"/>
+                <Button Text="Search" Clicked="ModulesSearchClicked" Grid.Column="1"/>
+            </Grid>
+
             
+
 
             
             
             <Button Text="Add Module" Clicked="AddModuleClicked"/>
+             <Button Text="Edit Module" Clicked="EditModuleClicked"/>
             <Button Text="Delete Module" Clicked="DeleteModuleClicked"/>
             <Button Text="Back" Clicked="BackModuleClicked"/>
 
@@ -43,8 +54,19 @@
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
 
+             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Entry       Grid.Column="0"/>
+                <Button Text="Search" Clicked="AssignmentsSearchClicked" Grid.Column="1"/>
+            </Grid>
+    
+
            
             <Button Text="Add Assignment" Clicked="AddAssignmentClicked"/>
+             <Button Text="Edit Assignment" Clicked="EditAssignmentClicked"/>
             <Button Text="Delete Assignment" Clicked="DeleteAssignmentClicked"/>
             <Button Text="Back" Clicked="BackAssignmentClicked"/>
 
