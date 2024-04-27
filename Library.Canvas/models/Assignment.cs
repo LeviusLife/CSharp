@@ -7,6 +7,7 @@ namespace Library.Canvas.Models {
 
         public decimal TotalAvailablePoints{get; set;}
 
+        public int AssignmentId {get; set;}
         public DateTime DueDate;
 
 

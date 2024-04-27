@@ -7,14 +7,16 @@ public partial class ModulesAndAssignments : ContentPage
 	public ModulesAndAssignments()
 	{
 		InitializeComponent();
-		BindingContext = new ModulesAndAssignmentsViewModel();
+		//BindingContext = new ModulesAndAssignmentsViewModel();
 	}
 
+    
    public ModulesAndAssignments(int courseId)
 	{
 		InitializeComponent();
 		BindingContext = new ModulesAndAssignmentsViewModel(courseId);
 	}
+    
 
 	private void Toolbar_ModulesClicked(object sender, EventArgs e)
     {
@@ -74,7 +76,7 @@ public partial class ModulesAndAssignments : ContentPage
 
 	private void AddAssignmentClicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync($"//AssignmentDetail");
+        Shell.Current.GoToAsync($"//AssignmentDetail?assignmentId={0}");
     }
 
     private void EditAssignmentClicked(object sender, EventArgs e)

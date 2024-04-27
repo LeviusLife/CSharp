@@ -4,14 +4,26 @@ namespace MAUI.Canvas.Dialogs
 {
     public partial class AssignmentDialog : ContentPage
     {
+
+		
+		public int AssignmentId { get; set; }
     	public AssignmentDialog()
     	{
     		InitializeComponent();
+			BindingContext = new AssignmentDialogViewModel(0);
     	}
 
-		public void AssignmentOkClicked(object sender, EventArgs e) {
+		public AssignmentDialog(int assignmentId) {
+			InitializeComponent();
+			BindingContext = new AssignmentDialogViewModel(assignmentId);
 
-			//jknsfdl
+		}
+
+		public void AssignmentOkClicked(object sender, EventArgs e) {
+			//this is where we willcall the (BindingContext as ) thingy
+			//(BindingContext as AssignmentDialogViewModel)?.AddAssignmenttoCourse();
+			//(BindingContext as ModulesAndAssignmentsViewModel)?.
+			Shell.Current.GoToAsync("//ModulesAndAssignments");
 		}
 
 		public void AssignmentCancelClicked(object sender, EventArgs e) {
