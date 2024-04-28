@@ -12,7 +12,7 @@
             Text="Name"
             VerticalOptions="Center"
             HorizontalOptions="Center"  />
-        <Entry ></Entry>
+        <Entry Text="{Binding Name}" ></Entry>
 
 
         <Grid>
@@ -33,7 +33,7 @@
                 Grid.Column="0"
                 />
             <Entry 
-               
+                Text="{Binding TotalAvailablePoints}"
                 Grid.Row="1"
                 Grid.Column="0"
                 ></Entry>
@@ -44,7 +44,7 @@
                 Grid.Row="0"
                 Grid.Column="1"/>
             <Entry 
-               
+                Text="{Binding DueDate}"
                 Grid.Row="1"
                 Grid.Column="1"></Entry>
         
@@ -57,7 +57,7 @@
             Text="Description"
             VerticalOptions="Center"
             HorizontalOptions="Center" />
-        <Entry ></Entry>
+        <Entry Text="{Binding Description}"></Entry>
 
         <Button Text="Confirm" Clicked="AssignmentOkClicked"/>
         <Button Text="Cancel" Clicked="AssignmentCancelClicked"/>

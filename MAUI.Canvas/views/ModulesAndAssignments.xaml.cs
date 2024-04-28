@@ -7,7 +7,7 @@ public partial class ModulesAndAssignments : ContentPage
 	public ModulesAndAssignments()
 	{
 		InitializeComponent();
-		//BindingContext = new ModulesAndAssignmentsViewModel();
+		BindingContext = new ModulesAndAssignmentsViewModel();
 	}
 
     

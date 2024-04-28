@@ -10,7 +10,7 @@ namespace MAUI.Canvas.viewmodels;
 
 internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
 {
-
+        public CourseService IdForShippment;
 
          public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -58,8 +58,9 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
 
         IsModulesVisible = true;
         IsAssignmentsVisible = false;
+        IdForShippment = CourseService.Current;
         
-
+        //if the default constructor is called then what should be stored within the CourseIdForMA?
     }
 
     public ModulesAndAssignmentsViewModel(int cId)
@@ -67,6 +68,7 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
 
         IsModulesVisible = true;
         IsAssignmentsVisible = false;
+        IdForShippment = CourseService.Current;
 
          if (cId == 0) {
 
@@ -77,6 +79,7 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
         else {
 
             CourseIdForMA = cId;
+            IdForShippment.CurrentId = cId;
 
         }
         

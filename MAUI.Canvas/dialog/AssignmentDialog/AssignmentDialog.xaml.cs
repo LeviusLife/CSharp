@@ -20,10 +20,34 @@ namespace MAUI.Canvas.Dialogs
 		}
 
 		public void AssignmentOkClicked(object sender, EventArgs e) {
-			//this is where we willcall the (BindingContext as ) thingy
-			//(BindingContext as AssignmentDialogViewModel)?.AddAssignmenttoCourse();
+			/*
+			if ((BindingContext is ModulesAndAssignmentsViewModel viewModel) == true)
+    			{
+        			int courseIdForAssignment = viewModel.CourseIdForMA;
+
+        			(BindingContext as AssignmentDialogViewModel)?.AddAssignmenttoCourse(courseIdForAssignment);
+        			Shell.Current.GoToAsync("//ModulesAndAssignments");
+        			BindingContext = new AssignmentDialogViewModel(0);
+    			}
+    		else
+    			{
+        			// Handle unexpected binding context type or null context
+        			// Log an error or display a message to indicate the issue
+        			//Debug.WriteLine("Unexpected or null BindingContext type in AssignmentDialog");
+
+
+    			}
+			*/
+
+
+
+			
+			//(BindingContext as AssignmentDialogViewModel)?.AddAssignment();
 			//(BindingContext as ModulesAndAssignmentsViewModel)?.
 			Shell.Current.GoToAsync("//ModulesAndAssignments");
+			BindingContext = new AssignmentDialogViewModel(0);
+			
+
 		}
 
 		public void AssignmentCancelClicked(object sender, EventArgs e) {

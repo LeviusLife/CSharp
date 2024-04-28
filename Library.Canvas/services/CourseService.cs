@@ -25,6 +25,13 @@ namespace Library.Canvas.Services {
 
         }
 
+         public int CurrentId {
+
+            get; set;
+
+
+         }
+
 
          private CourseService() {
 
