@@ -1,4 +1,5 @@
 using MAUI.Canvas.viewmodels;
+using MAUI.Canvas.Dialogs;
 
 namespace MAUI.Canvas.Views;
 
@@ -81,7 +82,19 @@ public partial class ModulesAndAssignments : ContentPage
 
     private void EditAssignmentClicked(object sender, EventArgs e)
     {
-         Shell.Current.GoToAsync($"//AssignmentDetail");
+         //Shell.Current.GoToAsync($"//AssignmentDetail");
+
+         var assignmentId = (BindingContext as ModulesAndAssignmentsViewModel)?.SelectedAssignment?.AssignmentId;
+
+		if (assignmentId != 0 && assignmentId != null) 
+		{
+
+
+			 Navigation.PushAsync(new AssignmentDialog(assignmentId.Value));
+
+		}
+		
+		//(BindingContext as InstructorsViewModel)?.ResetCourse();
     }
 
 	private void DeleteAssignmentClicked(object sender, EventArgs e)
