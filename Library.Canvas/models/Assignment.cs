@@ -13,10 +13,20 @@ namespace Library.Canvas.Models {
 
         public Assignment() {
 
-            
 
 
         }
+
+         public override string ToString()
+        {
+            //return Name;
+            //possible null reference return with Name in the above line ^
+
+            //return $"{Code} - {Name}";
+            return $"{AssignmentId} - {Name} ";
+
+        }
+
 
 
 

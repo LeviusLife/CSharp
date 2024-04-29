@@ -19,7 +19,14 @@ namespace Library.Canvas.Services
 
                 get
                 {
-                    return assignmentList.Select(c => c.AssignmentId).Max();
+                    if (assignmentList.Count == 0)
+                        {
+                            return 0; // Return 0 when the list is empty
+                        }
+                     else
+                    {
+                        return assignmentList.Select(c => c.AssignmentId).Max();
+                    }
                 }
 
             }
@@ -79,10 +86,34 @@ namespace Library.Canvas.Services
 
             if(assignment.AssignmentId <= 0 )
             {
+
                 assignment.AssignmentId = LastId + 1;
                 assignmentList.Add(assignment);
             }
      
+
+        }
+
+        public void AddorUpdateAssignment(Assignment assignment, Course course) {
+
+            
+
+            if(assignment.AssignmentId <= 0 )
+            {
+                assignmentList = course.Assignments;
+                assignment.AssignmentId = LastId + 1;
+                course.Assignments.Add(assignment);
+            }
+     
+
+        }
+
+        public int GiveMeTheIdPlease() {
+
+            int differentLastId;
+
+            return differentLastId = LastId;
+
 
         }
 

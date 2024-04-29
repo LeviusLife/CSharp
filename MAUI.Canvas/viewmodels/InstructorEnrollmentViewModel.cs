@@ -207,9 +207,10 @@ public class InstructorEnrollmentViewModel
        {    
         
             //courseSvcForEnrollment.Get(cId).Roster.Contains();
-        
+            //this is checking to see if a specific item with the course's list of rosters has the id studentEnrollment
             var found = courseSvcForEnrollment.Get(cId)!.Roster.FirstOrDefault( c => c.Id == studentIdForEnrollment);
 
+            //if there isnt a specific item within the course's list of rosters that have the same id as StudentEnrollment
             if (found == null) {
 
                 courseSvcForEnrollment.Get(cId)!.Roster.Add(studentSvcForEnrollment.Get(studentIdForEnrollment)!);

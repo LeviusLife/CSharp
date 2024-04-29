@@ -42,7 +42,7 @@ namespace MAUI.Canvas.Dialogs
 
 
 			
-			//(BindingContext as AssignmentDialogViewModel)?.AddAssignment();
+			(BindingContext as AssignmentDialogViewModel)?.AddAssignmenttoCourse();
 			//(BindingContext as ModulesAndAssignmentsViewModel)?.
 			Shell.Current.GoToAsync("//ModulesAndAssignments");
 			BindingContext = new AssignmentDialogViewModel(0);

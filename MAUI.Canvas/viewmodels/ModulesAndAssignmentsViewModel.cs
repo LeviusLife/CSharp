@@ -12,6 +12,8 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
 {
         public CourseService IdForShippment;
 
+        public AssignmentService assignmentSvcShit;
+
          public event PropertyChangedEventHandler? PropertyChanged;
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "") {
@@ -19,6 +21,30 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         }
+
+        public string Query {get; set;}
+
+        public ObservableCollection<Assignment> Assignmentz {
+
+
+            get
+            {
+
+
+                return new ObservableCollection<Assignment>(assignmentSvcShit.Assignments.Where(c => c?.Name?.ToUpper()?.Contains(Query?.ToUpper() ?? string.Empty)?? false));
+            }
+
+
+        }
+
+        public Assignment? SelectedAssignment{
+
+            get; set;
+
+        } = new Assignment();
+
+
+
 
         public int CourseIdForMA
         {
@@ -51,6 +77,7 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
             IsAssignmentsVisible = true;
            NotifyPropertyChanged("IsModulesVisible");
             NotifyPropertyChanged("IsAssignmentsVisible");
+
         }
 
     public ModulesAndAssignmentsViewModel()
@@ -59,6 +86,8 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
         IsModulesVisible = true;
         IsAssignmentsVisible = false;
         IdForShippment = CourseService.Current;
+        assignmentSvcShit = AssignmentService.Current;
+
         
         //if the default constructor is called then what should be stored within the CourseIdForMA?
     }
@@ -69,6 +98,7 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
         IsModulesVisible = true;
         IsAssignmentsVisible = false;
         IdForShippment = CourseService.Current;
+        assignmentSvcShit = AssignmentService.Current;
 
          if (cId == 0) {
 
@@ -85,6 +115,14 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
         
 
     }
+
+     public void Refresh() {
+
+          
+            NotifyPropertyChanged(nameof(Assignmentz));
+
+        }
+
 
 
 

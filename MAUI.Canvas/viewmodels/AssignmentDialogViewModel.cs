@@ -1,4 +1,5 @@
-﻿using Library.Canvas.Models;
+﻿
+using Library.Canvas.Models;
 using Library.Canvas.Services;
 
 
@@ -8,6 +9,8 @@ namespace MAUI.Canvas.viewmodels
     {
          private CourseService courseSvcForAssignment;
         private StudentService studentSvcForAssignment;
+
+        private AssignmentService assignmentSvcForAssignment;
 
         private Assignment? Assignment;
     
@@ -41,12 +44,53 @@ namespace MAUI.Canvas.viewmodels
         }
 
 
+        public decimal TotalAvailablePoints{
+
+            get;
+
+            set;
+            
+
+        }
+
+
+         public DateTime DueDate{
+
+            get;
+
+            set;
+
+            
+
+        }
+
+        public int CourseIdForSending {
+
+            get; set;
+
+
+        }
+
+
+/*
+         public event PropertyChangedEventHandler? PropertyChanged;
+
+        private void NotifyPropertyChanged([CallerMemberName] String propertyName = "") {
+
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+        }
+
+      */ 
+
+
 
         public AssignmentDialogViewModel(){
 
             
         courseSvcForAssignment = CourseService.Current;
         studentSvcForAssignment = StudentService.Current;
+        assignmentSvcForAssignment = AssignmentService.Current;
 
         }
 
@@ -55,10 +99,12 @@ namespace MAUI.Canvas.viewmodels
             
         courseSvcForAssignment = CourseService.Current;
         studentSvcForAssignment = StudentService.Current;
+        assignmentSvcForAssignment = AssignmentService.Current;
 
              if (aId == 0) {
 
                 assignmentIdForCourse = 0; 
+                Assignment = new Assignment();
                 //I might need to make a new Assignment and store the property as a 0 here
 
             }
@@ -66,6 +112,7 @@ namespace MAUI.Canvas.viewmodels
             else {
 
                 assignmentIdForCourse = aId;
+                Assignment = AssignmentService.Current.Get(aId) ?? new Assignment();
                 //the property will have the value set and stored here
 
 
@@ -76,14 +123,40 @@ namespace MAUI.Canvas.viewmodels
         }
 
 
-        public void AddAssignmenttoCourse(int cId) {
-            /*
-            if (assignmentIdForCourse > 0) {
+        public void AddAssignmenttoCourse() {
+              
+            var courseId = courseSvcForAssignment.CurrentId;
 
-                (BindingContext as ModulesAndAssignmentsViewModel)?.AddAssignmentS(assignmentIdForCourse);
+            if (courseId > 0)
+                {
+                    var course = courseSvcForAssignment.Get(courseId);
+
+                    if (course != null)
+                        {
+                            //if the course exists then fill in this viewmodel's property for courses
+                            CourseIdForSending = courseId;
+                            AssignmentService.Current.AddorUpdateAssignment(Assignment, course);
+                        }
+
+                }
+                
+
+            
+            
+
+        }
+
+
+
+
+         public void AddAssignment() {
+
+            if(Assignment != null){
+
+                AssignmentService.Current.AddorUpdateAssignment(Assignment);
 
             }
-            */
+
 
         }
 

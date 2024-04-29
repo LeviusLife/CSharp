@@ -95,6 +95,12 @@ public partial class ModulesAndAssignments : ContentPage
     }
 
 
+    private void ContentPage_NavigatedTo(object sender, EventArgs e) {
+
+			(BindingContext as ModulesAndAssignmentsViewModel)!.Refresh();
+
+	}
+
 
 
 
