@@ -15,14 +15,14 @@
             HorizontalOptions="Center"
         
         />
-        <Entry></Entry>
+        <Entry Text="{Binding Name}"></Entry>
 
         <Label
             Text="Description"
             VerticalOptions="Center"
             HorizontalOptions="Center"
         />
-        <Entry></Entry>
+        <Entry Text="{Binding Description}"></Entry>
 
         <Button Text="Confirm" Clicked="ModuleConfirmClicked"/>
         <Button Text="Cancel" Clicked="ModuleCancelClicked"/>

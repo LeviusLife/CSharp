@@ -34,7 +34,12 @@
                 <Button Text="Search" Clicked="ModulesSearchClicked" Grid.Column="1"/>
             </Grid>
 
-            
+            <ListView
+               ItemsSource="{Binding Modulez}"
+               SelectedItem="{Binding SelectedModule}"
+                >
+
+            </ListView>
 
 
             

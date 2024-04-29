@@ -7,13 +7,24 @@ namespace MAUI.Canvas.Dialogs
     	public ModuleDialog()
     	{
     		InitializeComponent();
+			BindingContext = new ModuleDialogViewModel(0);
     	}
+
+		public ModuleDialog(int moduleId) {
+
+			InitializeComponent();
+			BindingContext = new ModuleDialogViewModel(moduleId);
+
+		}
 
 
 		public void ModuleConfirmClicked(object sender, EventArgs e)
 		{
 
-			//kshdfkuhsdfkuh
+			(BindingContext as ModuleDialogViewModel)?.AddModuletoCourse();
+			//(BindingContext as ModulesAndAssignmentsViewModel)?.
+			Shell.Current.GoToAsync("//ModulesAndAssignments");
+			BindingContext = new ModuleDialogViewModel(0);
 
 		}
 

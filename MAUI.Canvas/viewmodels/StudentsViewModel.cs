@@ -71,6 +71,7 @@ namespace MAUI.Canvas.viewmodels
             //underlyingPerson = new Person { Name = "My Test Student"};
 
             studentSvc = StudentService.Current;
+            
         }
     }
 
