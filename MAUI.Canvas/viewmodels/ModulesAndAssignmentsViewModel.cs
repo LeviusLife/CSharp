@@ -37,6 +37,44 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
 
         }
 
+        /*
+        public ObservableCollection<Assignment> Assignmentzaz {
+
+
+            get {
+
+                return new ObservableCollection<Assignment>(IdForShippment.Get(CourseIdForMA).Assignments);
+
+            }
+
+
+        }
+        */
+
+        public ObservableCollection<Assignment> Assignmentzaz {
+
+            
+            get {
+                
+                   int somethin = IdForShippment.CurrentId;
+
+                if (somethin == 0)
+                    {
+                        // Handle case when CourseIdForMA is 0
+                        return new ObservableCollection<Assignment>();
+                    }
+                else
+                    {
+                     
+                        return new ObservableCollection<Assignment>(IdForShippment.Get(somethin).Assignments);
+                    }
+                //return new ObservableCollection<Assignment>(IdForShippment.Get(CourseIdForMA).Assignments);
+
+            }
+
+
+        }
+
         public Assignment? SelectedAssignment{
 
             get; set;
@@ -115,6 +153,17 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
         
 
     }
+
+    public void Remove() {
+
+            if(SelectedAssignment != null) {
+                //studentSvc.Remove(SelectedStudent);
+                assignmentSvcShit.Assignments.Remove(SelectedAssignment);
+                 Refresh();
+            }
+            
+           
+        }
 
      public void Refresh() {
 

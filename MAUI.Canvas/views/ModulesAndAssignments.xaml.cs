@@ -100,6 +100,17 @@ public partial class ModulesAndAssignments : ContentPage
 	private void DeleteAssignmentClicked(object sender, EventArgs e)
     {
         //(BindingContext as InstructorsViewModel)!.ShowEnrollments();
+
+          var assignmentId = (BindingContext as ModulesAndAssignmentsViewModel)?.SelectedAssignment?.AssignmentId;
+
+		if (assignmentId != 0 && assignmentId != null) 
+		{
+
+
+			 //Navigation.PushAsync(new AssignmentDialog(assignmentId.Value));
+             (BindingContext as ModulesAndAssignmentsViewModel)!.Remove();
+
+		}
     }
 
 	private void BackAssignmentClicked(object sender, EventArgs e)
