@@ -71,5 +71,10 @@
         Title="Student Absolute Detail"
         ContentTemplate="{DataTemplate local3:StudentAbsoluteDetail}"
         Route="AbsoluteDetail"   />    
+
+    <ShellContent
+        Title="Student Submission"
+        ContentTemplate="{DataTemplate local3:StudentSubmitDialog}"
+        Route="StudentSubmitDialog"   />      
         
 </Shell>

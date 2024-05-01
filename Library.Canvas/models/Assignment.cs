@@ -10,10 +10,12 @@ namespace Library.Canvas.Models {
         public int AssignmentId {get; set;}
         public DateTime DueDate;
 
+        public List<Submission> Submissions{get; set;}
+
 
         public Assignment() {
 
-
+            Submissions = new List<Submission>();
 
         }
 

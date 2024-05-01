@@ -12,6 +12,15 @@
             HorizontalOptions="Center" />
 
 
+        
+        <Label 
+            Text="{Binding Description}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+       
+
+
         <Label 
             Text="Modules"
             VerticalOptions="Center" 
@@ -23,19 +32,22 @@
 
             </ListView>
 
-
-        
         <Label 
             Text="Assignments"
             VerticalOptions="Center" 
             HorizontalOptions="Start" />
 
-         <ListView
-               
+
+        <ListView
+               ItemsSource="{Binding Assignmentszsz}"
                 >
 
             </ListView>
-            
+
+
+        
+       
+        <Button Text="Submit Assignment" Clicked="SubmitNavigateButtonClicked"/> 
         <Button Text="Back" Clicked="AbsoluteDetailBackClicked"/>
 
     </VerticalStackLayout>

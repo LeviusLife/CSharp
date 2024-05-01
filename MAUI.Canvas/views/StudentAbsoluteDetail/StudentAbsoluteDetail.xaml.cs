@@ -29,6 +29,12 @@ namespace MAUI.Canvas.Dialogs
 			(BindingContext as StudentAbsoluteDetailViewModel)!.RefreshModules();
 
 
-	}
+		}
+
+		private void SubmitNavigateButtonClicked(object sender, EventArgs e) {
+
+				Shell.Current.GoToAsync("//StudentSubmitDialog");
+
+		}
     }
 }
