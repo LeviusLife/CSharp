@@ -8,7 +8,15 @@ namespace MAUI.Canvas.Views
     	public CoursesView()
     	{
     		InitializeComponent();
+			BindingContext = new CoursesViewModel(0);
     	}
+
+		public CoursesView(int sId) {
+
+			InitializeComponent();
+			BindingContext = new CoursesViewModel(sId);
+
+		}
 
 
 		private void ViewCourseClicked(object sender, EventArgs e) 

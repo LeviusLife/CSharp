@@ -14,6 +14,8 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
 
         public AssignmentService assignmentSvcShit;
 
+        public ModuleService moduleSvcShit;
+
          public event PropertyChangedEventHandler? PropertyChanged;
 
         private void NotifyPropertyChanged([CallerMemberName] String propertyName = "") {
@@ -22,7 +24,7 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
 
         }
 
-        public string Query {get; set;}
+        public string? Query {get; set;} = "";
 
         public ObservableCollection<Assignment> Assignmentz {
 
@@ -75,11 +77,44 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
 
         }
 
+
+         public ObservableCollection<Module> Modulez {
+
+            
+            get {
+                
+                   int somethin = IdForShippment.CurrentId;
+
+                if (somethin == 0)
+                    {
+                        // Handle case when CourseIdForMA is 0
+                        return new ObservableCollection<Module>();
+                    }
+                else
+                    {
+                     
+                        return new ObservableCollection<Module>(IdForShippment.Get(somethin).Modules);
+
+                        
+                    }
+                //return new ObservableCollection<Assignment>(IdForShippment.Get(CourseIdForMA).Assignments);
+
+            }
+
+
+        }
+
         public Assignment? SelectedAssignment{
 
             get; set;
 
         } = new Assignment();
+
+        public Module? SelectedModule{
+
+            get; set;
+
+        } = new Module();
 
 
 
@@ -125,7 +160,8 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
         IsAssignmentsVisible = false;
         IdForShippment = CourseService.Current;
         assignmentSvcShit = AssignmentService.Current;
-
+        moduleSvcShit = ModuleService.Current;
+        Query = "";
         
         //if the default constructor is called then what should be stored within the CourseIdForMA?
     }
@@ -137,6 +173,8 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
         IsAssignmentsVisible = false;
         IdForShippment = CourseService.Current;
         assignmentSvcShit = AssignmentService.Current;
+        moduleSvcShit = ModuleService.Current;
+        Query = "";
 
          if (cId == 0) {
 
@@ -154,7 +192,7 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
 
     }
 
-    public void Remove() {
+    public void RemoveAssignment() {
 
             if(SelectedAssignment != null) {
                 //studentSvc.Remove(SelectedStudent);
@@ -165,10 +203,26 @@ internal class ModulesAndAssignmentsViewModel: INotifyPropertyChanged
            
         }
 
+    public void RemoveModule() {
+
+            //I'm not sure if that's doing what i think its doing
+            //i think its only deleting from the list of Modules and not deleting from the course's list of Modules
+
+            if(SelectedModule != null) {
+                //studentSvc.Remove(SelectedStudent);
+                moduleSvcShit.Modules.Remove(SelectedModule);
+                 Refresh();
+            }
+            
+           
+        }
+
      public void Refresh() {
 
           
-            NotifyPropertyChanged(nameof(Assignmentz));
+            NotifyPropertyChanged(nameof(Assignmentzaz));
+            NotifyPropertyChanged(nameof(Modulez));
+
 
         }
 

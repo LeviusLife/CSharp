@@ -18,6 +18,12 @@
                 <Button Text="Search" Clicked="CoursesViewSearchClicked" Grid.Column="1"/>
             </Grid>
 
+            <ListView
+               ItemsSource="{Binding Coursezaz}"
+                >
+
+            </ListView>
+
         <Button Text="View Course" Clicked="ViewCourseClicked" />
         <Button Text="Back" Clicked="CoursesViewBackClicked"/>
     </VerticalStackLayout>

@@ -96,6 +96,20 @@ namespace Library.Canvas.Services
 
         }
 
+         public void RemoveTheModule(Module module) {
+
+            int damn = courseService.CurrentId;
+
+            if(damn > 0) {
+
+                 courseService.Get(damn).Modules.Remove(module);
+                 moduleList = courseService.Get(damn).Modules;
+
+            }
+           
+
+        }
+
 
 
     }

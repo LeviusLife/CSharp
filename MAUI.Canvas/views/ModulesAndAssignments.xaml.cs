@@ -22,12 +22,14 @@ public partial class ModulesAndAssignments : ContentPage
 	private void Toolbar_ModulesClicked(object sender, EventArgs e)
     {
         (BindingContext as ModulesAndAssignmentsViewModel)!.ShowModules();
+         //(BindingContext as ModulesAndAssignmentsViewModel)!.Refresh();
     }
 
 
 	private void Toolbar_AssignmentsClicked(object sender, EventArgs e)
     {
         (BindingContext as ModulesAndAssignmentsViewModel)!.ShowAssignments();
+        //(BindingContext as ModulesAndAssignmentsViewModel)!.Refresh();
     }
 
 	//*************************************************
@@ -49,12 +51,22 @@ public partial class ModulesAndAssignments : ContentPage
 
     private void EditModuleClicked(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//ModuleDetail");
+        //Shell.Current.GoToAsync("//ModuleDetail");
+
+         var moduleId = (BindingContext as ModulesAndAssignmentsViewModel)?.SelectedModule?.ModuleId;
+
+		if (moduleId != 0 && moduleId != null) 
+		{
+
+
+			 Navigation.PushAsync(new ModuleDialog(moduleId.Value));
+
+		}
     }
 
 	private void DeleteModuleClicked(object sender, EventArgs e)
     {
-        //(BindingContext as InstructorsViewModel)!.ShowEnrollments();
+        (BindingContext as ModulesAndAssignmentsViewModel)!.RemoveModule();
     }
 
 	private void BackModuleClicked(object sender, EventArgs e)
@@ -108,7 +120,7 @@ public partial class ModulesAndAssignments : ContentPage
 
 
 			 //Navigation.PushAsync(new AssignmentDialog(assignmentId.Value));
-             (BindingContext as ModulesAndAssignmentsViewModel)!.Remove();
+             (BindingContext as ModulesAndAssignmentsViewModel)!.RemoveAssignment();
 
 		}
     }
@@ -122,6 +134,7 @@ public partial class ModulesAndAssignments : ContentPage
     private void ContentPage_NavigatedTo(object sender, EventArgs e) {
 
 			(BindingContext as ModulesAndAssignmentsViewModel)!.Refresh();
+
 
 	}
 

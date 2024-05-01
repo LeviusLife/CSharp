@@ -35,9 +35,23 @@ public partial class StudentsView : ContentPage
 
 	private void StudentCourseClicked(object sender, EventArgs e) {
 
-		Shell.Current.GoToAsync("//CoursesView");
+		//Shell.Current.GoToAsync("//CoursesView");
+
+		
+		var studentId = (BindingContext as StudentsViewModel)?.SelectedStudent?.Id;
+
+		if (studentId  != 0 && studentId  != null) 
+		{
+
+
+			 Navigation.PushAsync(new CoursesView(studentId.Value));
+
+		}
+		
 
 	}
+
+
 
 
 }

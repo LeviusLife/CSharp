@@ -20,7 +20,9 @@
 
 
         <ListView
-                ItemsSource="{Binding Students}">
+                ItemsSource="{Binding Students}"
+                SelectedItem="{Binding SelectedStudent}">
+                
 
         </ListView>
 

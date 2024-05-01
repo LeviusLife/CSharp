@@ -25,6 +25,12 @@ namespace Library.Canvas.Services {
 
         }
 
+         public int CurrentId {
+
+            get; set;
+
+         }
+
         private StudentService() {
 
             studentList = new List<Person> {

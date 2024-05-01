@@ -24,7 +24,7 @@ namespace MAUI.Canvas.viewmodels
         }
 
 
-         public string Query {get; set;}
+         public string Query {get; set;} = "";
 
 
 
@@ -65,6 +65,14 @@ namespace MAUI.Canvas.viewmodels
         }
 
         */
+
+        public Person? SelectedStudent{
+
+            get; set;
+
+        } = new Person();
+
+        
 
         public StudentsViewModel() {
 
