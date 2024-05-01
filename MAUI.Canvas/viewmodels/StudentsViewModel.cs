@@ -72,7 +72,7 @@ namespace MAUI.Canvas.viewmodels
 
         } = new Person();
 
-        
+
 
         public StudentsViewModel() {
 
@@ -80,6 +80,15 @@ namespace MAUI.Canvas.viewmodels
 
             studentSvc = StudentService.Current;
             
+        }
+
+
+        public void Refresh() {
+
+          
+            NotifyPropertyChanged(nameof(Students));
+            
+
         }
     }
 

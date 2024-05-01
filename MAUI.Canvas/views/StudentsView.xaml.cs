@@ -51,6 +51,12 @@ public partial class StudentsView : ContentPage
 
 	}
 
+	private void ContentPage_NavigatedTo(object sender, EventArgs e) {
+
+			(BindingContext as StudentsViewModel)!.Refresh();
+
+	}
+
 
 
 

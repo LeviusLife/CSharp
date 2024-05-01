@@ -20,6 +20,7 @@
 
             <ListView
                ItemsSource="{Binding Coursezaz}"
+               SelectedItem="{Binding SelectedCourse}"
                 >
 
             </ListView>

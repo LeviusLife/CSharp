@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.Canvas.Dialogs.StudentAbsoluteDetail"
+             Title="StudentAbsoluteDetail"
+             NavigatedTo="ContentPage_NavigatedTo">
+
+    <VerticalStackLayout>
+        <Label 
+            Text="Description"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+
+        <Label 
+            Text="Modules"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+
+          <ListView
+               ItemsSource="{Binding Moduleszsz}"
+                >
+
+            </ListView>
+
+
+        
+        <Label 
+            Text="Assignments"
+            VerticalOptions="Center" 
+            HorizontalOptions="Start" />
+
+         <ListView
+               
+                >
+
+            </ListView>
+            
+        <Button Text="Back" Clicked="AbsoluteDetailBackClicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

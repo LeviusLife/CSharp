@@ -67,4 +67,9 @@
         ContentTemplate="{DataTemplate local3:ModuleDialog}"
         Route="ModuleDetail"    />
         
+    <ShellContent
+        Title="Student Absolute Detail"
+        ContentTemplate="{DataTemplate local3:StudentAbsoluteDetail}"
+        Route="AbsoluteDetail"   />    
+        
 </Shell>
