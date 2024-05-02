@@ -40,6 +40,7 @@
 
         <ListView
                ItemsSource="{Binding Assignmentszsz}"
+               SelectedItem="{Binding SelectedAssignment}"
                 >
 
             </ListView>

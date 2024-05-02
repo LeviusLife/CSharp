@@ -6,11 +6,14 @@
 
         public int StudentId { get; set; }
 
+        public int AssignmentId { get; set; }
+
         public decimal Grade{ get; set; }
 
+        public int SubmissionId { get; set; }
         public Submission() {
 
-            
+
         }
     }
 }

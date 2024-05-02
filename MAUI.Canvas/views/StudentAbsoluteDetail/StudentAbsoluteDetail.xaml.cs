@@ -33,7 +33,18 @@ namespace MAUI.Canvas.Dialogs
 
 		private void SubmitNavigateButtonClicked(object sender, EventArgs e) {
 
-				Shell.Current.GoToAsync("//StudentSubmitDialog");
+				//Shell.Current.GoToAsync("//StudentSubmitDialog");
+
+				var assignmentId = (BindingContext as StudentAbsoluteDetailViewModel)?.SelectedAssignment?.AssignmentId;
+
+				if (assignmentId != 0 && assignmentId != null) 
+					{
+
+
+			 			Navigation.PushAsync(new StudentSubmitDialog(assignmentId.Value));
+
+					}
+
 
 		}
     }

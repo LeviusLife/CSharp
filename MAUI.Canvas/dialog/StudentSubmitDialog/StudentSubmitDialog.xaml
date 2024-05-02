@@ -11,6 +11,7 @@
             HorizontalOptions="Center" />
 
         <Editor 
+            Text="{Binding Answer}"
             Placeholder="Enter your text here..."
             HeightRequest="400"
             WidthRequest="1000"

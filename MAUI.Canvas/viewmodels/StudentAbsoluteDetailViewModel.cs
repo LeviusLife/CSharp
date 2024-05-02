@@ -99,6 +99,13 @@ public class StudentAbsoluteDetailViewModel: INotifyPropertyChanged
 
 
         }
+
+        
+         public Assignment? SelectedAssignment{
+
+            get; set;
+
+        } = new Assignment();
         
 
         
