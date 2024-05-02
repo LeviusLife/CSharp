@@ -96,9 +96,11 @@ namespace MAUI.Canvas.viewmodels
                 var assignment = assignmentSvcForSubmission.Get(assignId);
 
                 if(assignment != null) {
-
-                    assignmentIdForSubmission = assignId;
-                    StudentIdForStorage = studentSvcForSubmission.CurrentId;
+                    Submission.StudentId = studentSvcForSubmission.CurrentId;
+                    Submission.AssignmentId = assignId;
+                    //assignmentIdForSubmission = assignId;
+                    //StudentIdForStorage = studentSvcForSubmission.CurrentId;
+                    
                     SubmissionService.Current.AddorUpdateSubmission(Submission, assignment);
 
 
